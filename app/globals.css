@@ -1,26 +1,240 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * DESIGN SYSTEM — Hechewold Ad Hoc
+ * ──────────────────────────────────────────────────────────────────────────────
+ * impeccable audit applied:
+ *   - Font family: Barlow + Barlow Semi Condensed (replaces all three reflex-rejects)
+ *   - Colour strategy: COMMITTED amber (not restrained accent dots)
+ *   - No dedicated mono font — labels use body sans with restrained tracking
+ *
+ * design-taste-frontend applied:
+ *   - Easing variables follow the 100/300/500ms rule (motion-design.md)
+ *   - CSS custom properties named semantically (not by value)
+ *   - hardware-acceleration: animate transform + opacity only
+ *   - reduced-motion: skip spatial movement, preserve opacity/fade
+ *
+ * emil-design-eng applied:
+ *   - Easing curves: ease-out-quart for entrances, ease-in for exits
+ *   - No `transition: all` anywhere in the system
+ *   - Active states: scale(0.97) on press
+ *   - Hover states: transform only, never reflow-triggering properties
+ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Surfaces */
+  --color-canvas:         #F8F7F5;
+  --color-surface:        #FFFFFF;
+  --color-charcoal:       #1A1A1A;
+  --color-charcoal-mid:   #2D2D2D;
+
+  /* Amber — COMMITTED brand colour */
+  --color-amber-50:       #FFFBEB;
+  --color-amber-100:      #FEF3C7;
+  --color-amber-600:      #D97706;
+  --color-amber-700:      #B45309;
+  --color-amber-800:      #92400E;
+  --color-amber-900:      #78350F;
+
+  /* Supporting tones */
+  --color-steel:          #334155;
+  --color-slate-400:      #94A3B8;
+  --color-slate-500:      #64748B;
+  --color-slate-600:      #475569;
+  --color-border:         #E5E2DC;
+  --color-border-strong:  #D0CCC6;
+
+  /* Typography — ONE family, no mono */
+  --font-sans:    var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-display), system-ui, sans-serif;
+
+  /* Easing custom properties (design-taste-frontend + motion-design.md) */
+  --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-quart:   cubic-bezier(0.5, 0, 0.75, 0);
+  --ease-in-out:     cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Keyframes ─────────────────────────────────────────────────────────────── */
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* stagger children via CSS custom property index */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Ken Burns: slow cinematic pan + zoom on imagery ──────────────────────────
+ * Premium, continuous, very subtle. GPU-only (transform). Long periods so it
+ * reads as "alive" rather than "animated". Disabled under reduced-motion globally.
+ */
+@keyframes kb-zoom-in {
+  0%   { transform: scale(1.0) translate3d(0, 0, 0); }
+  100% { transform: scale(1.12) translate3d(0, 0, 0); }
+}
+@keyframes kb-zoom-out {
+  0%   { transform: scale(1.12) translate3d(0, 0, 0); }
+  100% { transform: scale(1.0) translate3d(0, 0, 0); }
+}
+@keyframes kb-pan-left {
+  0%   { transform: scale(1.12) translate3d(2%, 0, 0); }
+  100% { transform: scale(1.12) translate3d(-2%, 0, 0); }
+}
+@keyframes kb-pan-right {
+  0%   { transform: scale(1.12) translate3d(-2%, 1%, 0); }
+  100% { transform: scale(1.12) translate3d(2%, -1%, 0); }
+}
+@keyframes kb-drift {
+  0%   { transform: scale(1.08) translate3d(-1.5%, 1%, 0); }
+  100% { transform: scale(1.14) translate3d(1.5%, -1%, 0); }
+}
+/* One-time cinematic zoom-OUT that settles on load (Biograph-style premium reveal) */
+@keyframes kb-settle {
+  0%   { transform: scale(1.18); }
+  100% { transform: scale(1.0); }
+}
+
+/* ── Floating icon orbits — each variant has a different rhythm / rotation ── */
+@keyframes orbit-a {
+  0%,100% { transform: translateY(0px)   rotate(-4deg) scale(1);    }
+  50%      { transform: translateY(-14px) rotate( 4deg) scale(1.02); }
+}
+@keyframes orbit-b {
+  0%,100% { transform: translateY(-6px)  rotate( 3deg) scale(1.01); }
+  50%      { transform: translateY( 8px)  rotate(-3deg) scale(0.99); }
+}
+@keyframes orbit-c {
+  0%,100% { transform: translateY( 4px)  rotate(-2deg) scale(1);    }
+  50%      { transform: translateY(-10px) rotate( 5deg) scale(1.03); }
+}
+@keyframes orbit-d {
+  0%,100% { transform: translateY(-10px) rotate( 4deg) scale(1.01); }
+  50%      { transform: translateY(  6px) rotate(-5deg) scale(0.98); }
+}
+
+.orbit-a { animation: orbit-a  7s ease-in-out infinite; }
+.orbit-b { animation: orbit-b  9s ease-in-out infinite; }
+.orbit-c { animation: orbit-c  6s ease-in-out infinite; }
+.orbit-d { animation: orbit-d 11s ease-in-out infinite; }
+
+/* ── Reduced motion — emil-design-eng: always define this ──────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; }
+
+::selection {
+  background-color: #D97706;
+  color: #1A1A1A;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: #F8F7F5;
+  color: #1A1A1A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Fluid body text — fixed rem per typography.md: fixed scales for UI */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ── Typography utilities ──────────────────────────────────────────────────── */
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Heading scale — Barlow Semi Condensed, tight tracking */
+.heading-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.heading-lg {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.0;
+  text-wrap: balance;
+}
+
+.heading-md {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+/* Eyebrow / label — body sans, restrained tracking, no mono */
+.label-sm {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.6875rem;  /* 11px */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Pattern utilities ─────────────────────────────────────────────────────── */
+
+.animate-marquee { animation: marquee 38s linear infinite; }
+.animate-float   { animation: float 6s ease-in-out infinite; }
+.animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Ken Burns variants — alternate so motion eases in and reverses, never snaps */
+.kb-zoom-in  { animation: kb-zoom-in  26s ease-in-out infinite alternate; }
+.kb-zoom-out { animation: kb-zoom-out 26s ease-in-out infinite alternate; }
+.kb-pan-left { animation: kb-pan-left 30s ease-in-out infinite alternate; }
+.kb-pan-right{ animation: kb-pan-right 30s ease-in-out infinite alternate; }
+.kb-drift    { animation: kb-drift   34s ease-in-out infinite alternate; }
+/* `both` fill so the image starts at 1.18 (no flash) and holds at 1.0 after */
+.kb-settle   { animation: kb-settle  18s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* Engineering grid dot patterns */
+.grid-dots {
+  background-image: radial-gradient(circle, rgba(217, 119, 6, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.grid-dots-light {
+  background-image: radial-gradient(circle, rgba(26, 26, 26, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+.grid-dots-dark {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/*
+ * Staggered fade-up via CSS index — design-taste-frontend §4
+ * Usage: style={{ "--i": index } as React.CSSProperties}
+ * Then class="stagger-child"
+ */
+.stagger-child {
+  animation: fade-up 0.65s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
 }
