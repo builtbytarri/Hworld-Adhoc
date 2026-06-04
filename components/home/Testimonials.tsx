@@ -125,7 +125,7 @@ function TestimonialCard({ t, delay }: { t: typeof testimonials[0]; delay: numbe
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FAFAF9] py-14 lg:py-20">
+    <section className="bg-[#FAFAF9] py-10 lg:py-20">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
         {/* Centered heading */}

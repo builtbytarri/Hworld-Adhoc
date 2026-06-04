@@ -165,11 +165,11 @@ function ServiceRow({ service, index }: { service: Service; index: number }) {
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white py-14 lg:py-20">
+    <section className="bg-white py-10 lg:py-20">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
         {/* ── Floating thumbnails + centered heading ── */}
-        <div className="relative mb-10">
+        <div className="relative mb-6">
 
           {/* ── Structured floating rows — desktop only ──
                Top row: 4 photos spread above heading with alternating mt offset
@@ -205,7 +205,7 @@ export default function ServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.75, ease: EASE }}
-            className="relative mx-auto max-w-2xl py-12 text-center lg:py-16"
+            className="relative mx-auto max-w-2xl py-6 text-center lg:py-16"
           >
             <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
               Our Services
