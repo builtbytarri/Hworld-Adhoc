@@ -57,7 +57,7 @@ const panels = [
 
 export default function ValueProp() {
   return (
-    <section className="bg-white py-14 lg:py-20">
+    <section className="bg-white pt-3 pb-14 lg:pt-6 lg:pb-20">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
         {/* ── Centered header block (Biograph pattern) ── */}

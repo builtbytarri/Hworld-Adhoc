@@ -42,7 +42,7 @@ const bottomRow = [
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white py-10 lg:py-20">
+    <section className="bg-white pt-10 pb-3 lg:pt-20 lg:pb-6">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
         {/* ── Floating thumbnails + centered heading ── */}

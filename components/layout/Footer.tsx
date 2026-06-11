@@ -18,12 +18,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#F7F6F4] border-t border-[#EBEBEB]">
-      <div className="mx-auto max-w-[1280px] px-6 py-12 lg:px-10">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-5">
+      <div className="mx-auto max-w-[1280px] px-6 py-7 lg:px-10">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
 
           {/* Brand — takes 2 cols on large */}
           <div className="col-span-2 lg:col-span-2">
-            <div className="mb-3">
+            <div className="mb-2">
               <span className="text-sm font-bold tracking-[0.15em] text-[#0E0E0E]">
                 H<span className="text-amber-600">•</span>WORLD
               </span>
@@ -31,23 +31,23 @@ export default function Footer() {
                 Ad Hoc Services
               </p>
             </div>
-            <p className="mt-4 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">
+            <p className="mt-2 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">
               Expert project management, planning, and forensics support — deployed when you need it most.
             </p>
             <a
               href="mailto:adhoc@hworldinc.com"
-              className="mt-5 block text-sm text-amber-700 transition-colors hover:text-amber-600"
+              className="mt-2 block text-sm text-amber-700 transition-colors hover:text-amber-600"
             >
               adhoc@hworldinc.com
             </a>
           </div>
 
-          {/* Management */}
+          {/* Management + Forensics */}
           <div>
-            <h4 className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
               Management
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {visibleManagementServices.map((s) => (
                 <li key={s.slug}>
                   <Link
@@ -59,14 +59,11 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* Forensics + Company */}
-          <div>
-            <h4 className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 mt-3 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
               Forensics
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {forensicsServices.map((s) => (
                 <li key={s.slug}>
                   <Link
@@ -78,11 +75,14 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
 
-            <h4 className="mb-5 mt-8 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+          {/* Company */}
+          <div>
+            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
               Company
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5">
               {[
                 { href: "/sectors", label: "Sectors" },
                 { href: "/about", label: "About Us" },
@@ -102,10 +102,10 @@ export default function Footer() {
 
           {/* Get in touch */}
           <div>
-            <h4 className="mb-5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
               Deploy Expertise
             </h4>
-            <p className="mb-6 text-[13px] font-light leading-relaxed text-[#0E0E0E]/50">
+            <p className="mb-3 text-[13px] font-light leading-relaxed text-[#0E0E0E]/50">
               Need rapid resource deployment or forensic support?
             </p>
             <Link
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-[#EBEBEB] pt-8 sm:flex-row sm:items-center">
+        <div className="mt-5 flex flex-col items-start justify-between gap-3 border-t border-[#EBEBEB] pt-4 sm:flex-row sm:items-center">
           <p className="text-[11px] font-light text-[#0E0E0E]/30">
             &copy; {year} H-World. Part of the H-World Group.
           </p>
