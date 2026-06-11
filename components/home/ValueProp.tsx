@@ -34,7 +34,7 @@ const panels = [
     alt: img.handsBlueprints.alt,
     position: "60% 50%",
     num: "01",
-    title: "Fill the gap. Fast.",
+    title: "Rapid resource deployment.",
     body: "A last-minute planning gap, an urgent programme review, unplanned forensic exposure — we deploy trusted specialists within days, not months.",
   },
   {
@@ -43,7 +43,7 @@ const panels = [
     position: "50% 35%",
     num: "02",
     title: "Tools-first methodology.",
-    body: "Our professionals lead with the industry's standard tools — P6, Asta, Aphex, Synchro — so outputs are immediately usable and auditable.",
+    body: "Our professionals lead with the industry's standard tools — P6, MS Project, Asta, Aphex, Synchro — so outputs are immediately usable and auditable.",
   },
   {
     src: img.architectsBlueprint.src,
@@ -51,7 +51,7 @@ const panels = [
     position: "50% 30%",
     num: "03",
     title: "Sector intelligence.",
-    body: "From energy to rail, commercial to marine — our experts carry genuine domain knowledge, not just planning theory.",
+    body: "From energy to rail, oil & gas to marine, commercial to infrastructure — our experts carry genuine domain knowledge, not just planning theory.",
   },
 ];
 

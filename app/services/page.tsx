@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import SubpageHero from "@/components/ui/SubpageHero";
-import ServiceCard from "@/components/ui/ServiceCard";
+import ServiceListRow from "@/components/ui/ServiceListRow";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import FooterCTA from "@/components/home/FooterCTA";
-import { managementServices, forensicsServices } from "@/lib/services";
+import { visibleManagementServices, forensicsServices } from "@/lib/services";
 import { img } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -33,14 +33,12 @@ export default function ServicesPage() {
               Management Services
             </p>
             <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[#0E0E0E]">
-              Ten disciplines. One standard.
+              Five disciplines. One standard.
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {managementServices.map((service, i) => (
-              <AnimatedSection key={service.slug} delay={Math.min(i * 0.05, 0.35)}>
-                <ServiceCard service={service} featured />
-              </AnimatedSection>
+          <div className="grid grid-cols-1 gap-x-8 lg:grid-cols-2">
+            {visibleManagementServices.map((service, i) => (
+              <ServiceListRow key={service.slug} service={service} index={i} />
             ))}
           </div>
         </div>
@@ -60,11 +58,9 @@ export default function ServicesPage() {
               When claims arise or disputes escalate, our forensics team provides independent, evidence-led programme analysis.
             </p>
           </AnimatedSection>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-8 lg:grid-cols-2">
             {forensicsServices.map((service, i) => (
-              <AnimatedSection key={service.slug} delay={i * 0.08}>
-                <ServiceCard service={service} featured />
-              </AnimatedSection>
+              <ServiceListRow key={service.slug} service={service} index={i} />
             ))}
           </div>
         </div>

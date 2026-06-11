@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { managementServices, forensicsServices } from "@/lib/services";
+import { visibleManagementServices, forensicsServices } from "@/lib/services";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -92,7 +92,7 @@ export default function Nav() {
                       Management
                     </span>
                   </div>
-                  {managementServices.map((s) => (
+                  {visibleManagementServices.map((s) => (
                     <Link
                       key={s.slug}
                       href={`/services/${s.slug}`}
@@ -211,7 +211,7 @@ export default function Nav() {
             {[
               { href: "/", label: "Home" },
               { href: "/services", label: "All Management Services" },
-              ...managementServices.map((s) => ({
+              ...visibleManagementServices.map((s) => ({
                 href: `/services/${s.slug}`,
                 label: s.title,
                 indent: true,

@@ -7,16 +7,17 @@ export interface Service {
   techniques: string[];
   category: "management" | "forensics";
   icon: string;
+  hidden?: boolean;
 }
 
 export const managementServices: Service[] = [
   {
-    slug: "project-management",
-    title: "Project Management",
+    slug: "program-management",
+    title: "Programme Management",
     shortDesc:
-      "On-demand deployment of experienced project managers to supplement or lead delivery teams at any stage.",
+      "On-demand deployment of experienced programme managers to supplement or lead delivery teams at any stage.",
     longDesc:
-      "H-World deploys battle-tested project managers who integrate seamlessly into your delivery structure — whether as embedded resource, programme lead, or interim director. We cover mobilisation and governance setup, stakeholder and interface management, progress reporting, risk and issue escalation, and end-to-end delivery oversight. Our managers operate across NEC, JCT, and bespoke contract frameworks, bringing rigour without disruption to your existing team.",
+      "H-World deploys battle-tested programme managers who integrate seamlessly into your delivery structure — whether as embedded resource, programme lead, or interim director. We cover mobilisation and governance setup, stakeholder and interface management, progress reporting, risk and issue escalation, and end-to-end delivery oversight. Our managers operate across NEC, JCT, and bespoke contract frameworks, bringing rigour without disruption to your existing team.",
     techniques: [
       "Programme governance setup",
       "Stakeholder & interface management",
@@ -60,6 +61,7 @@ export const managementServices: Service[] = [
       "Earned value management",
     ],
     category: "management",
+    hidden: true,
     icon: "TrendingUp",
   },
   {
@@ -77,6 +79,7 @@ export const managementServices: Service[] = [
       "Handover documentation",
     ],
     category: "management",
+    hidden: true,
     icon: "FileText",
   },
   {
@@ -94,6 +97,7 @@ export const managementServices: Service[] = [
       "Risk response & mitigation planning",
     ],
     category: "management",
+    hidden: true,
     icon: "Shield",
   },
   {
@@ -129,6 +133,7 @@ export const managementServices: Service[] = [
       "Final account resolution",
     ],
     category: "management",
+    hidden: true,
     icon: "Briefcase",
   },
   {
@@ -146,6 +151,7 @@ export const managementServices: Service[] = [
       "Market benchmarking",
     ],
     category: "management",
+    hidden: true,
     icon: "Calculator",
   },
   {
@@ -243,6 +249,8 @@ export const forensicsServices: Service[] = [
     icon: "Gavel",
   },
 ];
+
+export const visibleManagementServices = managementServices.filter((s) => !s.hidden);
 
 export const allServices = [...managementServices, ...forensicsServices];
 

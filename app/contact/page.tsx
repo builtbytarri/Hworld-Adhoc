@@ -10,11 +10,9 @@ import { img } from "@/lib/images";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const enquiryTypes = [
-  "Project Management", "Planning & Controls", "Financial Services",
-  "Document Management", "Risk Management", "4D Planning",
-  "Commercial Management", "Project Estimations", "Functional Lead Service",
-  "Project Controls", "Claims Analysis", "Dispute Resolution",
-  "Expert Witness", "General Enquiry",
+  "Programme Management", "Planning & Controls", "4D Planning",
+  "Functional Lead Service", "Project Controls", "Claims Analysis",
+  "Dispute Resolution", "Expert Witness", "General Enquiry",
 ];
 
 const headOffice = {

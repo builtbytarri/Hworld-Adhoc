@@ -37,7 +37,7 @@ const barlow = Barlow({
 
 export const metadata: Metadata = {
   title: {
-    default: "H-World Ad Hoc | Project Management & Planning Consultancy",
+    default: "H-World Ad Hoc | Programme Management & Planning Consultancy",
     template: "%s | H-World Ad Hoc",
   },
   description:

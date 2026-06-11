@@ -97,12 +97,12 @@ export default function Hero() {
           variants={blurFade(0)}
           className="mb-8 text-[11px] font-medium uppercase tracking-[0.22em] text-white/45"
         >
-          Ad hoc planning &amp; project controls
+          Adhoc project planning and controls
         </motion.p>
 
         {/* Headline — masked line reveal */}
         <h1 className="font-sans text-white">
-          <span className="block overflow-hidden pb-[0.08em]">
+          <span className="block">
             <motion.span
               initial="hidden"
               animate="show"
@@ -112,7 +112,7 @@ export default function Hero() {
               Planning &amp; controls,
             </motion.span>
           </span>
-          <span className="block overflow-hidden pb-[0.08em]">
+          <span className="block">
             <motion.span
               initial="hidden"
               animate="show"

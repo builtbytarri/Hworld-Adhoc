@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { forensicsServices, managementServices, getServiceBySlug } from "@/lib/services";
+import { forensicsServices, visibleManagementServices, getServiceBySlug } from "@/lib/services";
 import ServiceDetailLayout from "@/components/ui/ServiceDetailLayout";
 import { notFound } from "next/navigation";
 
@@ -19,7 +19,7 @@ export default function Page() {
   if (!service) notFound();
   const related = [
     ...forensicsServices.filter((s) => s.slug !== SLUG),
-    ...managementServices.slice(0, 1),
+    ...visibleManagementServices.slice(0, 1),
   ].slice(0, 3);
   return <ServiceDetailLayout service={service} related={related} />;
 }

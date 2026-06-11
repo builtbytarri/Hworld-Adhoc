@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { managementServices, forensicsServices } from "@/lib/services";
+import { visibleManagementServices, forensicsServices } from "@/lib/services";
 
 /*
  * Footer — Biograph minimal light style
@@ -48,7 +48,7 @@ export default function Footer() {
               Management
             </h4>
             <ul className="space-y-3">
-              {managementServices.map((s) => (
+              {visibleManagementServices.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
