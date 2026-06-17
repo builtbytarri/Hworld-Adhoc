@@ -1,132 +1,181 @@
 "use client";
 
 /*
- * ServicesGrid — "What We Do" intro (Biograph "Our Tests" pattern)
+ * ServicesGrid — "Our Services" viewport snap section
  * ──────────────────────────────────────────────────────────────────────────────
- * Floating photo thumbnails scattered around a centered heading on lg screens.
- * Each thumbnail orbits continuously with a different speed + rotation (CSS).
- * They fade in on scroll entrance from slightly off-position.
+ * Layout:
+ *   TOP (centered)  — eyebrow + heading + description + "View all" CTA
+ *   BOTTOM          — CardStack: auto-advancing fan of service cards at 1000ms
  *
- * Centered: eyebrow + large heading + short copy + "View all services" CTA.
- * The actual service grids live on the /services page.
+ * Each card uses a real site photo + service title/description/link.
+ * Cards fan out left/right from the active card and can be dragged or
+ * dot-navigated. The active card shows an amber "Learn more" CTA.
  */
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 import { img } from "@/lib/images";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-/*
- * REAL PHOTOS ONLY — no illustrations, no infographics, no 3D renders.
- * Structured two-row layout:
- *   topRow:    4 images spread above the heading, alternating vertical offset for rhythm
- *   bottomRow: 3 images spread below the heading, offset between top positions
- *
- * Each image has a unique size, rotation angle, orbit animation and delay so
- * they feel organic but remain visually consistent as a set of real photography.
- */
-const topRow = [
-  { src: img.architectsBlueprint.src, orbit: "orbit-a", delay: "0s",    size: 88,  mt: "mt-0",  rotate: "-7deg"  },
-  { src: img.teamScaleModel.src,      orbit: "orbit-b", delay: "1.8s",  size: 80,  mt: "mt-10", rotate: "5deg"   },
-  { src: img.handsBlueprints.src,     orbit: "orbit-c", delay: "0.7s",  size: 84,  mt: "mt-4",  rotate: "-4deg"  },
-  { src: img.buildersGlass.src,       orbit: "orbit-d", delay: "2.3s",  size: 96,  mt: "mt-0",  rotate: "6deg"   },
-];
-
-const bottomRow = [
-  { src: img.architectsOffice.src,    orbit: "orbit-c", delay: "1.1s",  size: 88,  mb: "mb-0",  rotate: "5deg"   },
-  { src: img.inspectors.src,          orbit: "orbit-a", delay: "0.4s",  size: 80,  mb: "mb-8",  rotate: "-6deg"  },
-  { src: img.teamPortrait.src,        orbit: "orbit-b", delay: "1.6s",  size: 84,  mb: "mb-0",  rotate: "4deg"   },
+const serviceCards: CardStackItem[] = [
+  {
+    id: 1,
+    title: "Programme Management",
+    description: "On-demand programme managers deployed to supplement or lead delivery at any stage.",
+    imageSrc: img.architectsOffice.src,
+    href: "/services/program-management",
+    ctaLabel: "Learn more",
+    tag: "Management",
+  },
+  {
+    id: 2,
+    title: "Planning & Controls",
+    description: "Baseline scheduling, critical path analysis, lookahead planning and recovery programmes.",
+    imageSrc: img.handsBlueprints.src,
+    href: "/services/planning-and-controls",
+    ctaLabel: "Learn more",
+    tag: "Management",
+  },
+  {
+    id: 3,
+    title: "4D Planning",
+    description: "Linking construction schedules to 3D models for time-based visual simulations.",
+    imageSrc: img.teamScaleModel.src,
+    href: "/services/4d-planning",
+    ctaLabel: "Learn more",
+    tag: "Management",
+  },
+  {
+    id: 4,
+    title: "Functional Lead Service",
+    description: "Embedded senior expert owning the planning function on major programmes.",
+    imageSrc: img.teamPortrait.src,
+    href: "/services/functional-lead",
+    ctaLabel: "Learn more",
+    tag: "Management",
+  },
+  {
+    id: 5,
+    title: "Project Controls",
+    description: "Integrated controls covering schedule, cost, risk and change — the data infrastructure for informed decisions.",
+    imageSrc: img.staffBriefing.src,
+    href: "/services/project-controls",
+    ctaLabel: "Learn more",
+    tag: "Management",
+  },
+  {
+    id: 6,
+    title: "Claims Analysis",
+    description: "Rigorous EOT assessments, prolongation costs and disruption claim analysis.",
+    imageSrc: img.networkPins.src,
+    href: "/services/claims-analysis",
+    ctaLabel: "Learn more",
+    tag: "Forensics",
+  },
+  {
+    id: 7,
+    title: "Dispute Resolution",
+    description: "Independent expert support through adjudication, arbitration and litigation.",
+    imageSrc: img.architectsBlueprint.src,
+    href: "/services/dispute-resolution",
+    ctaLabel: "Learn more",
+    tag: "Forensics",
+  },
+  {
+    id: 8,
+    title: "Expert Witness",
+    description: "Court-ready programme analysis and opinions on delay, disruption and productivity.",
+    imageSrc: img.buildersGlass.src,
+    href: "/services/expert-witness",
+    ctaLabel: "Learn more",
+    tag: "Forensics",
+  },
 ];
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white pt-10 pb-3 lg:pt-20 lg:pb-6">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+    <section className="flex h-[100dvh] flex-col overflow-hidden bg-white pt-16 pb-4 lg:pt-[68px]">
+      <div className="mx-auto flex w-full max-w-[1280px] flex-1 flex-col px-6 lg:px-10">
 
-        {/* ── Floating thumbnails + centered heading ── */}
-        <div className="relative">
-
-          {/* ── Structured floating rows — desktop only ──
-               Top row: 4 photos spread above heading with alternating mt offset
-               Bottom row: 3 photos spread below heading, offset between top positions
-               All real photography, same category, different sizes+rotations+orbits. */}
-          <div className="pointer-events-none hidden lg:block" aria-hidden>
-            {/* Top row */}
-            <div className="flex items-end justify-between px-2 pb-0">
-              {topRow.map((f, i) => (
-                <motion.div
-                  key={`top-${i}`}
-                  initial={{ opacity: 0, y: -20, scale: 0.85 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.75, delay: 0.05 + i * 0.1, ease: EASE }}
-                  className={`${f.orbit} ${f.mt}`}
-                  style={{ animationDelay: f.delay }}
-                >
-                  <div
-                    className="overflow-hidden rounded-2xl shadow-[0_8px_28px_rgba(0,0,0,0.13)]"
-                    style={{ width: f.size, height: f.size, transform: `rotate(${f.rotate})` }}
-                  >
-                    <Image src={f.src} alt="" width={f.size} height={f.size} className="h-full w-full object-cover" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Centered heading block */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
+        {/* ── Centered heading block ── */}
+        <div className="mx-auto mb-4 max-w-2xl text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.75, ease: EASE }}
-            className="relative mx-auto max-w-2xl py-6 text-center lg:py-16"
+            transition={{ duration: 0.55, ease: EASE }}
+            className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600"
           >
-            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
-              Our Services
-            </p>
-            <h2 className="text-[clamp(2.5rem,4.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#0E0E0E]">
-              Expert support across every phase of delivery.
-            </h2>
-            <p className="mx-auto mt-6 max-w-lg text-lg font-light leading-relaxed text-[#0E0E0E]/50">
-              From mobilisation through completion — and into forensic analysis — our
-              disciplines cover every dimension of project delivery.
-            </p>
+            Our Services
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: EASE }}
+            className="text-[clamp(2rem,3.5vw,3.25rem)] font-medium leading-[1.05] tracking-[-0.025em] text-[#0E0E0E]"
+          >
+            Expert support across every phase of delivery.
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
+            className="mt-3 text-[14.5px] font-light leading-relaxed text-[#0E0E0E]/50"
+          >
+            From mobilisation through completion — and into forensic analysis — our
+            disciplines cover every dimension of project delivery.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.18, ease: EASE }}
+            className="mt-5"
+          >
             <Link
               href="/services"
-              className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#E5E2DC] px-6 py-3 text-sm font-medium text-[#0E0E0E] transition-[border-color,background-color,color] duration-200 hover:border-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-[#E5E2DC] px-6 py-2.5 text-sm font-medium text-[#0E0E0E] transition-[border-color,background-color,color] duration-200 hover:border-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white"
             >
               View all services
+              <ArrowRight size={13} strokeWidth={2.2} />
             </Link>
           </motion.div>
-
-          {/* Bottom row — 3 images, spaced to sit between the top 4 positions */}
-          <div className="pointer-events-none hidden lg:block" aria-hidden>
-            <div className="flex items-start justify-between px-[12%] pt-0">
-              {bottomRow.map((f, i) => (
-                <motion.div
-                  key={`bot-${i}`}
-                  initial={{ opacity: 0, y: 20, scale: 0.85 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.75, delay: 0.2 + i * 0.1, ease: EASE }}
-                  className={`${f.orbit} ${f.mb}`}
-                  style={{ animationDelay: f.delay }}
-                >
-                  <div
-                    className="overflow-hidden rounded-2xl shadow-[0_8px_28px_rgba(0,0,0,0.13)]"
-                    style={{ width: f.size, height: f.size, transform: `rotate(${f.rotate})` }}
-                  >
-                    <Image src={f.src} alt="" width={f.size} height={f.size} className="h-full w-full object-cover" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
         </div>
+
+        {/* ── CardStack — fills remaining height ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+          className="flex flex-1 items-center justify-center"
+        >
+          <CardStack
+            items={serviceCards}
+            initialIndex={0}
+            autoAdvance
+            intervalMs={1000}
+            pauseOnHover={false}
+            showDots
+            loop
+            cardWidth={480}
+            cardHeight={300}
+            overlap={0.5}
+            spreadDeg={44}
+            maxVisible={7}
+            activeLiftPx={20}
+            activeScale={1.03}
+            inactiveScale={0.93}
+          />
+        </motion.div>
 
       </div>
     </section>

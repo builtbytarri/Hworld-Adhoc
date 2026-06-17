@@ -52,7 +52,7 @@ const stats = [
 
 export default function WhyUs() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F7F5] py-14 lg:py-20">
+    <section className="relative overflow-hidden bg-[#F8F7F5] py-6 lg:py-10">
 
       {/* ── Background texture: truss-lattice at 8% ──
           The orange threads of the structural mesh echo the brand amber.
@@ -74,22 +74,22 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
-          className="mb-10 max-w-2xl"
+          className="mb-5 max-w-2xl"
         >
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
             Why H-World
           </p>
-          <h2 className="text-[clamp(2.25rem,4vw,3.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[#0E0E0E]">
+          <h2 className="text-[clamp(1.75rem,3vw,2.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[#0E0E0E]">
             The experts who show up and deliver.
           </h2>
-          <p className="mt-4 max-w-xl text-[17px] font-light leading-relaxed text-[#0E0E0E]/55">
+          <p className="mt-2 max-w-xl text-[14px] font-light leading-relaxed text-[#0E0E0E]/55">
             We built this practice for the moments when your programme can&apos;t afford to wait.
             Four things set us apart — and all four matter.
           </p>
         </motion.div>
 
         {/* 2×2 statement grid — cards float over textured bg */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 border-t border-[#E5E2DC] pt-8">
+        <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 border-t border-[#E5E2DC] pt-5">
           {statements.map((s, i) => (
             <motion.div
               key={s.n}
@@ -97,15 +97,15 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.65, delay: i * 0.08, ease: EASE }}
-              className="rounded-2xl border border-[#E5E2DC] bg-white/80 p-7 backdrop-blur-sm"
+              className="rounded-xl border border-[#E5E2DC] bg-white/80 p-4 backdrop-blur-sm"
             >
-              <span className="mb-4 block text-[13px] font-semibold tabular-nums text-amber-600">
+              <span className="mb-2 block text-[12px] font-semibold tabular-nums text-amber-600">
                 {s.n}
               </span>
-              <h3 className="text-[18px] font-semibold leading-snug text-[#0E0E0E]">
+              <h3 className="text-[15px] font-semibold leading-snug text-[#0E0E0E]">
                 {s.heading}
               </h3>
-              <p className="mt-2.5 text-[15px] font-light leading-relaxed text-[#0E0E0E]/55">
+              <p className="mt-1.5 text-[13px] font-light leading-relaxed text-[#0E0E0E]/55">
                 {s.body}
               </p>
             </motion.div>
@@ -118,7 +118,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.35, ease: EASE }}
-          className="mt-8 grid grid-cols-2 gap-6 border-t border-[#E5E2DC] pt-7 sm:grid-cols-4"
+          className="mt-4 grid grid-cols-2 gap-6 border-t border-[#E5E2DC] pt-4 sm:grid-cols-4"
         >
           {stats.map((stat) => (
             <div key={stat.label}>

@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#F7F6F4] border-t border-[#EBEBEB]">
-      <div className="mx-auto max-w-[1280px] px-6 py-7 lg:px-10">
+      <div className="mx-auto max-w-[1280px] px-6 py-5 lg:px-10">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
 
           {/* Brand — takes 2 cols on large */}
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-5 flex flex-col items-start justify-between gap-3 border-t border-[#EBEBEB] pt-4 sm:flex-row sm:items-center">
+        <div className="mt-4 flex flex-col items-start justify-between gap-2 border-t border-[#EBEBEB] pt-3 sm:flex-row sm:items-center">
           <p className="text-[11px] font-light text-[#0E0E0E]/30">
             &copy; {year} H-World. Part of the H-World Group.
           </p>

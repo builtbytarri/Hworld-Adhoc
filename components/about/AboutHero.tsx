@@ -20,7 +20,7 @@ export default function AboutHero() {
     <section
       aria-label="About Hero"
       className="relative flex overflow-hidden bg-[#0E0E0E]"
-      style={{ minHeight: "clamp(320px, 50dvh, 520px)" }}
+      style={{ minHeight: "clamp(160px, 28dvh, 260px)" }}
     >
       <KenBurnsImage
         src={img.architectsBlueprint.src}
@@ -34,12 +34,12 @@ export default function AboutHero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/55 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/20" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-12 pt-32 lg:px-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-7 lg:pt-24">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
-          className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
+          className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
         >
           About H-World
         </motion.p>
@@ -49,7 +49,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-            className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
+            className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
           >
             Built for the gap.
           </motion.span>
@@ -57,7 +57,7 @@ export default function AboutHero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
-            className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
+            className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
           >
             Trusted on the programme.
           </motion.span>

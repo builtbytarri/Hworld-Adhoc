@@ -58,10 +58,10 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* ── HERO ── */}
+      {/* ── HERO — slim, matches service detail treatment ── */}
       <section
         className="relative flex overflow-hidden bg-[#0E0E0E]"
-        style={{ minHeight: "clamp(280px, 44dvh, 460px)" }}
+        style={{ minHeight: "clamp(120px, 20dvh, 180px)" }}
       >
         <KenBurnsImage
           src={img.handsBlueprints.src}
@@ -74,11 +74,11 @@ export default function ContactPage() {
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/92 via-[#0E0E0E]/65 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
-        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-12 pt-32 lg:px-10">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pt-24 lg:pb-7">
           <motion.p
             initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
-            className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
+            className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
           >
             Contact
           </motion.p>
@@ -86,30 +86,17 @@ export default function ContactPage() {
             <motion.span
               initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-              className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
+              className="block text-[clamp(1.6rem,3vw,2.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white"
             >
-              Let&apos;s talk about
-            </motion.span>
-            <motion.span
-              initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
-              className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
-            >
-              your project.
+              Let&apos;s talk about{" "}
+              <span className="text-amber-500">your project.</span>
             </motion.span>
           </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
-            className="mt-5 max-w-md text-[16px] font-light leading-relaxed text-white/55"
-          >
-            We respond within one business day.
-          </motion.p>
         </div>
       </section>
 
       {/* ── FORM + CONTACT DETAILS ── */}
-      <section className="bg-white py-14 lg:py-20">
+      <section className="bg-white py-8 lg:py-10">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[320px_1fr] lg:gap-20">
 
@@ -262,9 +249,9 @@ export default function ContactPage() {
       </section>
 
       {/* ── OTHER OFFICES ── */}
-      <section className="bg-white py-14 lg:py-16">
+      <section className="bg-white py-6 lg:py-8">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
-          <AnimatedSection className="mb-10">
+          <AnimatedSection className="mb-5">
             <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">Global Presence</p>
             <h2 className="text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-[-0.02em] text-[#0E0E0E]">
               Our Other Offices

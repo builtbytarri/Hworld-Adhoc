@@ -25,6 +25,7 @@ import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import KenBurnsImage from "@/components/ui/KenBurnsImage";
+import SectorsTicker from "@/components/layout/SectorsTicker";
 import { img } from "@/lib/images";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -88,7 +89,7 @@ export default function Hero() {
       />
 
       {/* ── Content, anchored to the base ── */}
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-end px-6 pb-14 pt-40 lg:px-10 lg:pb-20">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-end px-6 pb-20 pt-40 lg:px-10 lg:pb-24">
 
         {/* Eyebrow */}
         <motion.p
@@ -184,6 +185,11 @@ export default function Hero() {
             ))}
           </motion.div>
         </div>
+      </div>
+
+      {/* ── Sectors ticker — pinned to the bottom of the hero ── */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <SectorsTicker />
       </div>
     </section>
   );

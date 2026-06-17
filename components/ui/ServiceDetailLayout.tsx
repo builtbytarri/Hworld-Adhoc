@@ -47,10 +47,10 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
 
   return (
     <>
-      {/* ── HERO — compact photographic, same style as About / Sectors ── */}
+      {/* ── HERO — slim photographic banner ── */}
       <section
         className="relative flex overflow-hidden bg-[#0E0E0E]"
-        style={{ minHeight: "clamp(300px, 48dvh, 500px)" }}
+        style={{ minHeight: "clamp(160px, 28dvh, 260px)" }}
       >
         {/* Consistent image across all service pages */}
         <KenBurnsImage
@@ -65,7 +65,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/92 via-[#0E0E0E]/65 to-transparent" />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-12 pt-32 lg:px-10">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-7 lg:pt-24">
           {/* Back navigation */}
           <motion.div
             initial={{ opacity: 0, x: -10 }}
@@ -74,7 +74,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
           >
             <Link
               href={backHref}
-              className="mb-6 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white/70"
+              className="mb-3 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white/70"
             >
               <ArrowLeft size={13} strokeWidth={2} />
               {backLabel}
@@ -85,7 +85,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: EASE }}
-            className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
+            className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
           >
             {eyebrow}
           </motion.p>
@@ -95,7 +95,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.2, ease: EASE }}
-              className="block text-[clamp(2rem,4.5vw,3.75rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
+              className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
             >
               {service.title}
             </motion.span>
@@ -105,7 +105,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.32, ease: EASE }}
-            className="mt-4 max-w-[520px] text-[16px] font-light leading-relaxed text-white/55"
+            className="mt-2 max-w-[520px] text-[14px] font-light leading-relaxed text-white/55"
           >
             {service.shortDesc}
           </motion.p>
@@ -113,34 +113,34 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
       </section>
 
       {/* ── MAIN CONTENT ── */}
-      <section className="bg-white py-14 lg:py-20">
+      <section className="bg-white py-8 lg:py-10">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_320px] lg:gap-16">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px] lg:gap-10">
 
             {/* Left — description */}
             <div>
               <AnimatedSection>
-                <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
                   Overview
                 </p>
-                <p className="text-[17px] font-light leading-[1.75] text-[#0E0E0E]/65">
+                <p className="text-[15px] font-light leading-[1.7] text-[#0E0E0E]/65">
                   {service.longDesc}
                 </p>
               </AnimatedSection>
 
-              <AnimatedSection delay={0.1} className="mt-12">
+              <AnimatedSection delay={0.1} className="mt-7">
                 <div className="h-px bg-[#EBEBEB]" />
-                <div className="mt-8">
-                  <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                <div className="mt-5">
+                  <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
                     How We Work
                   </p>
-                  <p className="text-[16px] font-light leading-[1.75] text-[#0E0E0E]/60">
+                  <p className="text-[15px] font-light leading-[1.7] text-[#0E0E0E]/60">
                     H-World professionals integrate directly into your project structure from day one.
                     We align to your existing governance, tools, and reporting cadence — providing
                     specialist capability without friction. Whether you need one embedded expert
                     or a small controls team, we deploy the right resource in the right configuration.
                   </p>
-                  <p className="mt-4 text-[16px] font-light leading-[1.75] text-[#0E0E0E]/60">
+                  <p className="mt-3 text-[15px] font-light leading-[1.7] text-[#0E0E0E]/60">
                     All outputs are transparent, auditable, and produced to a standard that holds up
                     under scrutiny — whether in a board review or a formal dispute.
                   </p>
@@ -149,19 +149,19 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
             </div>
 
             {/* Right — sidebar */}
-            <div className="space-y-5">
+            <div className="space-y-3">
 
               {/* Techniques / Scope */}
               <AnimatedSection delay={0.12}>
-                <div className="rounded-2xl border border-[#EBEBEB] bg-[#F8F7F5] p-6">
-                  <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                <div className="rounded-xl border border-[#EBEBEB] bg-[#F8F7F5] p-4">
+                  <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
                     {service.category === "forensics" ? "Techniques & Approaches" : "Scope Includes"}
                   </p>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {service.techniques.map((t) => (
-                      <li key={t} className="flex items-start gap-3">
-                        <CheckCircle2 size={14} strokeWidth={2} className="mt-0.5 flex-shrink-0 text-amber-600" />
-                        <span className="text-[14px] font-light text-[#0E0E0E]/65">{t}</span>
+                      <li key={t} className="flex items-start gap-2.5">
+                        <CheckCircle2 size={13} strokeWidth={2} className="mt-0.5 flex-shrink-0 text-amber-600" />
+                        <span className="text-[13px] font-light text-[#0E0E0E]/65">{t}</span>
                       </li>
                     ))}
                   </ul>
@@ -171,11 +171,11 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               {/* Tools */}
               {service.tools && service.tools.length > 0 && (
                 <AnimatedSection delay={0.18}>
-                  <div className="rounded-2xl border border-[#EBEBEB] bg-[#F8F7F5] p-6">
-                    <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                  <div className="rounded-xl border border-[#EBEBEB] bg-[#F8F7F5] p-4">
+                    <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
                       Tools We Use
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {service.tools.map((tool) => (
                         <span
                           key={tool}
@@ -191,16 +191,16 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
 
               {/* Inline CTA card */}
               <AnimatedSection delay={0.24}>
-                <div className="rounded-2xl bg-[#0E0E0E] p-6">
-                  <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-white/30">
+                <div className="rounded-xl bg-[#0E0E0E] p-4">
+                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-white/30">
                     Deploy This Service
                   </p>
-                  <p className="text-[15px] font-light leading-relaxed text-white/55">
+                  <p className="text-[13px] font-light leading-relaxed text-white/55">
                     Need {service.title} support? Get in touch — we respond within 24 hours.
                   </p>
                   <Link
                     href="/contact"
-                    className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber-600 py-3 text-[12px] font-semibold tracking-wide text-white transition-[background-color,transform] duration-150 hover:bg-amber-500 active:scale-[0.97]"
+                    className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-amber-600 py-2.5 text-[12px] font-semibold tracking-wide text-white transition-[background-color,transform] duration-150 hover:bg-amber-500 active:scale-[0.97]"
                   >
                     Get in Touch <ArrowRight size={13} strokeWidth={2} />
                   </Link>
@@ -211,44 +211,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
         </div>
       </section>
 
-      {/* ── RELATED SERVICES ── */}
-      {related.length > 0 && (
-        <section className="bg-[#F8F7F5] py-12 lg:py-16">
-          <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
-            <AnimatedSection className="mb-7">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
-                Related Services
-              </p>
-            </AnimatedSection>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {related.slice(0, 3).map((s, i) => {
-                const RelatedIcon = iconMap[s.icon] ?? LayoutGrid;
-                const href = s.category === "management" ? `/services/${s.slug}` : `/forensics/${s.slug}`;
-                return (
-                  <AnimatedSection key={s.slug} delay={i * 0.07}>
-                    <Link
-                      href={href}
-                      className="group flex items-start gap-4 rounded-xl border border-[#EBEBEB] bg-white p-5 transition-[border-color,box-shadow] duration-200 hover:border-amber-200 hover:shadow-[0_6px_20px_rgba(217,119,6,0.08)]"
-                    >
-                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-600 transition-colors duration-200 group-hover:bg-amber-600 group-hover:text-white">
-                        <RelatedIcon size={16} strokeWidth={1.6} />
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="text-[15px] font-semibold text-[#0E0E0E]">{s.title}</h3>
-                        <p className="mt-1 line-clamp-2 text-[13px] font-light text-[#0E0E0E]/45">
-                          {s.shortDesc}
-                        </p>
-                      </div>
-                    </Link>
-                  </AnimatedSection>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── GLOBAL FOOTER CTA (replaces the old inline "Ready to Deploy?" strip) ── */}
+      {/* ── GLOBAL FOOTER CTA ── */}
       <FooterCTA />
     </>
   );

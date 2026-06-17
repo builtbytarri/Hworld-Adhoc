@@ -57,7 +57,7 @@ const panels = [
 
 export default function ValueProp() {
   return (
-    <section className="bg-white pt-3 pb-14 lg:pt-6 lg:pb-20">
+    <section className="bg-white pt-2 pb-8 lg:pt-4 lg:pb-12">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
         {/* ── Centered header block (Biograph pattern) ── */}
@@ -66,22 +66,22 @@ export default function ValueProp() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.75, ease: EASE }}
-          className="mx-auto mb-10 max-w-2xl text-center"
+          className="mx-auto mb-5 max-w-2xl text-center"
         >
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
+          <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
             The Ad Hoc Advantage
           </p>
-          <h2 className="text-[clamp(2.5rem,4.5vw,4rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#0E0E0E]">
+          <h2 className="text-[clamp(1.9rem,3.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#0E0E0E]">
             Flexible support for critical moments.
           </h2>
-          <p className="mt-6 text-lg font-light leading-relaxed text-[#0E0E0E]/55">
+          <p className="mt-3 text-[15px] font-light leading-relaxed text-[#0E0E0E]/55">
             H-World&apos;s Ad Hoc Services division is built to fill the gaps — fast.
             Whether it&apos;s last-minute planning resource, urgent programme analysis, or
             forensic support, we deploy trusted experts and tools to keep your project on track.
           </p>
           <Link
             href="/services"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-[#E5E2DC] px-6 py-3 text-sm font-medium text-[#0E0E0E] transition-[border-color,background-color] duration-200 hover:border-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#E5E2DC] px-6 py-3 text-sm font-medium text-[#0E0E0E] transition-[border-color,background-color] duration-200 hover:border-[#0E0E0E] hover:bg-[#0E0E0E] hover:text-white"
           >
             Learn more
           </Link>
@@ -98,7 +98,7 @@ export default function ValueProp() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, delay: i * 0.1, ease: EASE }}
               className="group relative overflow-hidden rounded-2xl bg-[#0E0E0E]"
-              style={{ minHeight: "clamp(340px, 45vw, 520px)" }}
+              style={{ minHeight: "clamp(240px, 30vw, 380px)" }}
             >
               {/* Photo — scales in on hover (Emil: transform only, no all) */}
               <Image

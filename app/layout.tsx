@@ -42,6 +42,14 @@ export const metadata: Metadata = {
   },
   description:
     "Expert ad hoc project management, planning, controls, and forensics support — deployed rapidly across construction, infrastructure, energy, and rail.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },          // fallback for older browsers
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
