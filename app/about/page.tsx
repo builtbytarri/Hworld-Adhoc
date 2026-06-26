@@ -59,11 +59,12 @@ const evidencePanels = [
 export default function AboutPage() {
   return (
     <>
+      <div className="flex min-h-[100dvh] flex-col">
       {/* 1. HERO — photographic, staggered entrance */}
       <AboutHero />
 
       {/* 2. STORY */}
-      <section className="bg-white py-8 lg:py-10">
+      <section className="flex-1 bg-white py-8 lg:py-10">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
           <AnimatedSection className="mb-6 max-w-3xl">
@@ -147,6 +148,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </div>
 
       {/* 3. MISSION QUOTE */}
       <section className="relative overflow-hidden bg-[#0E0E0E]" style={{ minHeight: "200px" }}>

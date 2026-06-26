@@ -47,6 +47,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
 
   return (
     <>
+      <div className="flex min-h-[100dvh] flex-col">
       {/* ── HERO — slim photographic banner ── */}
       <section
         className="relative flex overflow-hidden bg-[#0E0E0E]"
@@ -113,7 +114,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
       </section>
 
       {/* ── MAIN CONTENT ── */}
-      <section className="bg-white py-8 lg:py-10">
+      <section className="flex-1 bg-white py-8 lg:py-10">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_300px] lg:gap-10">
 
@@ -210,6 +211,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
           </div>
         </div>
       </section>
+      </div>
 
       {/* ── GLOBAL FOOTER CTA ── */}
       <FooterCTA />

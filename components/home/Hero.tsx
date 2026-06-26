@@ -110,7 +110,7 @@ export default function Hero() {
               variants={lineReveal(0)}
               className="block text-[clamp(3rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.02em]"
             >
-              Planning &amp; controls,
+              Planning &amp; Controls,
             </motion.span>
           </span>
           <span className="block">
@@ -120,7 +120,7 @@ export default function Hero() {
               variants={lineReveal(1)}
               className="block text-[clamp(3rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.02em] text-white/55"
             >
-              on demand.
+              on Demand.
             </motion.span>
           </span>
         </h1>

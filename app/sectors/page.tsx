@@ -21,6 +21,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; strokeWidth?:
 export default function SectorsPage() {
   return (
     <>
+      <div className="flex min-h-[100dvh] flex-col">
       {/* 1. HERO — compact, aerial infrastructure photo */}
       <SectorsHero />
 
@@ -32,7 +33,7 @@ export default function SectorsPage() {
           Hover: amber left-border slides in + subtle bg tint.
           (Same interaction language as the ServicesGrid rows.)
       */}
-      <section className="bg-white py-8 lg:py-10">
+      <section className="flex-1 bg-white py-8 lg:py-10">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
 
           {/* Section heading */}
@@ -96,6 +97,7 @@ export default function SectorsPage() {
           </div>
         </div>
       </section>
+      </div>
 
       <FooterCTA />
     </>
