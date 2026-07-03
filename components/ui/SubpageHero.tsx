@@ -23,6 +23,7 @@ interface SubpageHeroProps {
   imageAlt: string;
   imagePosition?: string;
   variant?: "zoom-in" | "zoom-out" | "pan-left" | "pan-right" | "drift";
+  compact?: boolean;
 }
 
 export default function SubpageHero({
@@ -34,11 +35,12 @@ export default function SubpageHero({
   imageAlt,
   imagePosition = "50% 40%",
   variant = "zoom-in",
+  compact = false,
 }: SubpageHeroProps) {
   return (
     <section
       className="relative flex overflow-hidden bg-[#0E0E0E]"
-      style={{ minHeight: "clamp(300px, 48dvh, 500px)" }}
+      style={{ minHeight: compact ? "clamp(80px, 10dvh, 100px)" : "clamp(300px, 48dvh, 500px)" }}
     >
       <KenBurnsImage
         src={imageSrc}
@@ -52,12 +54,12 @@ export default function SubpageHero({
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-12 pt-32 lg:px-10">
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 lg:px-10 ${compact ? "pb-5 pt-[80px] lg:pt-[84px] lg:pb-6" : "pb-12 pt-32"}`}>
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
-          className="mb-4 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500"
+          className={`text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500 ${compact ? "mb-2.5" : "mb-4"}`}
         >
           {eyebrow}
         </motion.p>
@@ -67,7 +69,7 @@ export default function SubpageHero({
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-            className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
+            className={`block font-bold leading-[1.05] tracking-[-0.03em] text-white ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}
           >
             {headingWhite}
           </motion.span>
@@ -76,7 +78,7 @@ export default function SubpageHero({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
-              className="block text-[clamp(2.25rem,4.5vw,4rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
+              className={`block font-bold leading-[1.05] tracking-[-0.03em] text-amber-500 ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}
             >
               {headingAmber}
             </motion.span>

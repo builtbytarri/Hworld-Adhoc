@@ -147,6 +147,28 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
                   </p>
                 </div>
               </AnimatedSection>
+
+              {/* Tools — inline below text */}
+              {service.tools && service.tools.length > 0 && (
+                <AnimatedSection delay={0.15} className="mt-7">
+                  <div className="h-px bg-[#EBEBEB]" />
+                  <div className="mt-5">
+                    <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                      Tools We Use
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {service.tools.map((tool) => (
+                        <span
+                          key={tool}
+                          className="rounded-full border border-amber-600/20 bg-amber-50 px-4 py-1.5 text-[13px] font-medium text-amber-700"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </AnimatedSection>
+              )}
             </div>
 
             {/* Right — sidebar */}
@@ -169,29 +191,8 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
                 </div>
               </AnimatedSection>
 
-              {/* Tools */}
-              {service.tools && service.tools.length > 0 && (
-                <AnimatedSection delay={0.18}>
-                  <div className="rounded-xl border border-[#EBEBEB] bg-[#F8F7F5] p-4">
-                    <p className="mb-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
-                      Tools We Use
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {service.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="rounded-full border border-amber-600/20 bg-white px-3 py-1 text-[12px] font-medium text-amber-700"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </AnimatedSection>
-              )}
-
               {/* Inline CTA card */}
-              <AnimatedSection delay={0.24}>
+              <AnimatedSection delay={0.18}>
                 <div className="rounded-xl bg-[#0E0E0E] p-4">
                   <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-white/30">
                     Deploy This Service
