@@ -33,11 +33,11 @@ export default function SectorsPage() {
           Hover: amber left-border slides in + subtle bg tint.
           (Same interaction language as the ServicesGrid rows.)
       */}
-      <section className="flex-1 bg-white py-8 lg:py-10">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+      <section className="flex flex-1 flex-col justify-center bg-white py-8 md:py-[var(--v-section)]">
+        <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
 
           {/* Section heading */}
-          <AnimatedSection className="mb-4">
+          <AnimatedSection className="mb-4 md:mb-[var(--v-block-sm)]">
             <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
               Our Sectors
             </p>
@@ -58,7 +58,7 @@ export default function SectorsPage() {
                   delay={Math.min(i * 0.04, 0.2)}
                   className="border-b border-[#EBEBEB]"
                 >
-                  <div className="group relative flex items-start gap-3 py-3 px-2 -mx-2 rounded-lg transition-colors duration-150 hover:bg-[#F8F7F5] cursor-default">
+                  <div className="group relative flex items-start gap-3 py-3 md:py-[var(--v-row)] px-2 -mx-2 rounded-lg transition-colors duration-150 hover:bg-[#F8F7F5] cursor-default">
                     <span
                       aria-hidden
                       className="absolute left-0 top-2 bottom-2 w-0 rounded-full bg-amber-600 transition-[width] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-[3px]"
@@ -77,7 +77,7 @@ export default function SectorsPage() {
                     {/* Text */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between gap-4">
-                        <h3 className="text-[14px] font-semibold text-[#0E0E0E]">
+                        <h3 className="text-[15px] md:text-[length:var(--v-text)] font-semibold text-[#0E0E0E]">
                           {sector.title}
                         </h3>
                         <ArrowRight
@@ -86,7 +86,7 @@ export default function SectorsPage() {
                           className="flex-shrink-0 text-amber-600 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-1 group-hover:opacity-100"
                         />
                       </div>
-                      <p className="mt-0.5 text-[12px] font-light leading-relaxed text-[#0E0E0E]/50">
+                      <p className="mt-0.5 text-[13px] md:text-[length:var(--v-text-sm)] font-light leading-relaxed text-[#0E0E0E]/50">
                         {sector.description}
                       </p>
                     </div>

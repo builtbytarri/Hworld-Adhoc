@@ -163,21 +163,22 @@ export default function ForensicsContent() {
 
   return (
     <>
-      <SubpageHero
-        eyebrow="Forensics Services"
-        headingWhite="Rigorous, evidence-based"
-        headingAmber="forensic analysis."
-        imageSrc={img.networkPins.src}
-        imageAlt={img.networkPins.alt}
-        imagePosition="50% 40%"
-        variant="pan-right"
-        compact
-      />
+      <div className="flex min-h-[100dvh] flex-col">
+        <SubpageHero
+          eyebrow="Forensics Services"
+          headingWhite="Rigorous, evidence-based"
+          headingAmber="forensic analysis."
+          imageSrc={img.networkPins.src}
+          imageAlt={img.networkPins.alt}
+          imagePosition="50% 40%"
+          variant="pan-right"
+          compact
+        />
 
-      <section ref={sectionRef} className="bg-white py-10 lg:py-14">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-10">
+        <section ref={sectionRef} className="flex flex-1 flex-col justify-center bg-white py-10 md:py-[var(--v-section)]">
+        <div className="mx-auto w-full max-w-[900px] px-6 lg:px-10">
           {/* Section label */}
-          <div className="mb-6">
+          <div className="mb-6 md:mb-[var(--v-block-sm)]">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600 mb-1">
               Our Disciplines
             </p>
@@ -199,7 +200,8 @@ export default function ForensicsContent() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       <FooterCTA />
     </>

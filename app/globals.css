@@ -55,6 +55,83 @@
   --ease-in-out:     cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/* ── Viewport-height fluid scale ──────────────────────────────────────────────
+ * ONE source of truth for the "one-viewport" subpages (services, forensics,
+ * sectors, about, contact + every service/forensics detail page).
+ *
+ * Problem it solves: those pages are designed so the hero + content fill exactly
+ * one screen (page 1), with the CTA + footer as page 2. That only holds on the
+ * viewport height it was hand-tuned for. On a shorter viewport (e.g. 125% browser
+ * zoom, small laptops) the content overflows page 1; on a very tall screen (32")
+ * the content leaves dead space above the footer.
+ *
+ * --vt is a single normalised 0→1 factor driven by the viewport HEIGHT:
+ *     0  → short viewport  → tokens collapse to their compact minimums (fit)
+ *     1  → tall  viewport  → tokens expand to their spacious maximums (fill)
+ * It is exactly clamp(0, (100dvh − MIN) / RANGE, 1). CSS can't divide two lengths
+ * to a unitless ratio directly, so we use tan(atan2(y, x)) = y/x, which is valid
+ * and well-supported. Change ANCHOR_MIN / ANCHOR_RANGE below to recalibrate the
+ * whole site's vertical rhythm from one place.
+ *
+ * Anchors: compact floor at 620px tall, fully spacious by 1040px tall.
+ * (A 14" MacBook ~820px lands mid-scale — the current "picture-perfect" look.)
+ *
+ * Tokens are consumed only via `md:` utilities, so mobile (<768px) keeps its own
+ * fixed, natural-scroll spacing and is unaffected.
+ */
+:root {
+  --vt: tan(atan2(clamp(0px, 100dvh - 620px, 420px), 420px));
+
+  /* Section & block rhythm.
+   * NOTE: on the one-viewport pages the main content band is vertically CENTRED
+   * (justify-center) so tall screens are filled by balanced whitespace, not by
+   * oversized type. --v-section is therefore only the *minimum* internal padding,
+   * not the fill mechanism — keep it moderate. */
+  --v-section:   calc(0.75rem + var(--vt) * 1.75rem);  /* 12 → 40  main content pad-block   */
+  --v-block:     calc(0.5rem  + var(--vt) * 2.75rem);  /*  8 → 52  gap between major blocks  */
+  --v-block-sm:  calc(0.25rem + var(--vt) * 2rem);     /*  4 → 36  gap after hairline divider*/
+  --v-stack:     calc(0.375rem+ var(--vt) * 0.5rem);   /*  6 → 14  sidebar / small stacks    */
+
+  /* Navbar logo — compact on short viewports so the fixed nav stays ~64px tall
+   * (its original height) and never overlaps the full-bleed hero content; grows
+   * on tall screens where heroes are tall and there's room to spare. */
+  --v-logo:      calc(40px    + var(--vt) * 16px);     /* 40 → 56  navbar logo height          */
+
+  /* Hero */
+  --v-hero:      calc(150px   + var(--vt) * 130px);    /* 150 → 280  standard subpage hero    */
+  --v-hero-slim: calc(120px   + var(--vt) * 90px);     /* 120 → 210  slim overview/contact hero*/
+  --v-hero-pad:  calc(0.75rem + var(--vt) * 1.5rem);   /* 12 → 36  hero bottom padding         */
+
+  /* Cards & list rows */
+  --v-card:      calc(0.75rem + var(--vt) * 0.75rem);  /* 12 → 24  card padding               */
+  --v-bento-row: calc(150px   + var(--vt) * 85px);     /* 150 → 235  bento auto-row min-height */
+  --v-li:        calc(0.25rem + var(--vt) * 0.375rem); /*  4 → 10  list-item vertical padding  */
+
+  /* Denser list rows that should still spread out to fill tall screens
+   * (e.g. the sectors editorial list). More generous than --v-li. */
+  --v-row:       calc(0.5rem  + var(--vt) * 2.25rem);  /*  8 → 44  editorial list-row padding  */
+
+  /* Form field row gap — comfortable minimum, grows on tall screens. Kept
+   * readable (never collapses) per UX: inputs always need breathing room. */
+  --v-form-y:    calc(0.75rem + var(--vt) * 0.875rem); /* 12 → 26  gap between form field rows  */
+
+  /* Small margins that read as "breathing room" */
+  --v-label-mb:  calc(0.125rem+ var(--vt) * 0.625rem); /*  2 → 12  eyebrow / label margin      */
+  --v-lead-mt:   calc(0.25rem + var(--vt) * 0.5rem);   /*  4 → 12  lead / subline top margin   */
+
+  /* Fluid type — grows on tall screens, shrinks when short (client requirement) */
+  --v-text:      calc(13px    + var(--vt) * 3.5px);    /* 13 → 16.5  body copy                 */
+  --v-text-sm:   calc(12px    + var(--vt) * 2.5px);    /* 12 → 14.5  secondary copy            */
+  --v-lead:      calc(13.5px  + var(--vt) * 3px);      /* 13.5 → 16.5  hero subline / lead      */
+}
+
+/* Short-viewport helper: hide secondary copy when there isn't vertical room for
+ * it, so the one-viewport pages keep all their primary content above the fold.
+ * Used e.g. on hero sublines of the densest overview pages. */
+@media (max-height: 700px) and (min-width: 768px) {
+  .short-hide { display: none; }
+}
+
 /* ── Keyframes ─────────────────────────────────────────────────────────────── */
 
 @keyframes marquee {

@@ -39,8 +39,8 @@ export default function ServicesContent() {
           compact
         />
 
-        <section className="flex-1 bg-white py-8 lg:py-10">
-          <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+        <section className="flex flex-1 flex-col justify-center bg-white py-8 md:py-[var(--v-section)]">
+          <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
             <MagicBento items={bentoItems} enableTilt={false} />
           </div>
         </section>

@@ -17,7 +17,7 @@ export default function SectorsHero() {
     <section
       aria-label="Sectors Hero"
       className="relative flex overflow-hidden bg-[#0E0E0E]"
-      style={{ minHeight: "clamp(160px, 28dvh, 260px)" }}
+      style={{ minHeight: "var(--v-hero-slim)" }}
     >
       <KenBurnsImage
         src={img.aerialInfra.src}
@@ -31,7 +31,7 @@ export default function SectorsHero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-7 lg:pt-24">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(46px,calc(var(--v-hero-slim)*0.4))]">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,20 +41,20 @@ export default function SectorsHero() {
           Sectors We Serve
         </motion.p>
 
-        <h1>
+        <h1 className="text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.05] tracking-[-0.03em]">
           <motion.span
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-            className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
+            className="text-white"
           >
-            Eight sectors.
+            Eight sectors.{" "}
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
-            className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
+            className="text-amber-500"
           >
             One standard.
           </motion.span>
@@ -64,7 +64,7 @@ export default function SectorsHero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
-          className="mt-2 max-w-lg text-[14px] font-light leading-relaxed text-white/55"
+          className="short-hide mt-2 max-w-lg text-[14px] font-light leading-relaxed text-white/55"
         >
           Our professionals have carried live programmes across every sector we serve —
           bringing genuine domain knowledge, not just planning theory.

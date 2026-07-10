@@ -64,10 +64,10 @@ export default function AboutPage() {
       <AboutHero />
 
       {/* 2. STORY */}
-      <section className="flex-1 bg-white py-8 lg:py-10">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+      <section className="flex flex-1 flex-col justify-center bg-white py-8 md:py-[var(--v-section)]">
+        <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
 
-          <AnimatedSection className="mb-6 max-w-3xl">
+          <AnimatedSection className="mb-6 md:mb-[var(--v-block-sm)] max-w-3xl">
             <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600">
               About
             </p>
@@ -85,13 +85,13 @@ export default function AboutPage() {
                   <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/35">
                     Who We Are
                   </h3>
-                  <p className="text-[14px] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
                     H-World exists because the market needed something that didn&apos;t exist:
                     expert-grade planning, controls, and forensic professionals available
                     on demand — without the friction of permanent hire or the compromise
                     of a generalist agency.
                   </p>
-                  <p className="mt-2 text-[14px] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
                     A programme drifting. A claim needing analysis. A controls function
                     that needs standing up from scratch. These are the moments we are
                     built for.
@@ -102,13 +102,13 @@ export default function AboutPage() {
                   <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/35">
                     How We Work
                   </h3>
-                  <p className="text-[14px] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
                     We embed into your team. We align to your governance, your tools,
                     and your reporting cadence from day one — not as consultants who
                     parachute in and leave, but as professionals who carry the work
                     alongside you.
                   </p>
-                  <p className="mt-2 text-[14px] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
                     The goal is always to deliver value immediately — and to leave your
                     team stronger than we found it.
                   </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
               </div>
 
               {/* Stats */}
-              <AnimatedSection delay={0.2} className="mt-5 border-t border-[#E5E2DC] pt-4">
+              <AnimatedSection delay={0.2} className="mt-5 md:mt-[var(--v-block-sm)] border-t border-[#E5E2DC] pt-4">
                 <p className="text-[13px] font-light tracking-wide text-[#0E0E0E]/40">
                   <span className="font-semibold text-[#0E0E0E]/70">10+</span> disciplines
                   &nbsp;&nbsp;·&nbsp;&nbsp;
@@ -131,10 +131,10 @@ export default function AboutPage() {
 
             {/* Right — image */}
             <AnimatedSection
-              className="mt-8 hidden overflow-hidden rounded-xl lg:mt-0 lg:block"
+              className="mt-8 hidden overflow-hidden rounded-xl lg:mt-0 lg:block lg:self-start"
               delay={0.08}
             >
-              <div style={{ minHeight: "340px" }} className="relative h-full w-full">
+              <div style={{ height: "clamp(200px,42dvh,360px)" }} className="relative w-full">
                 <KenBurnsImage
                   src={img.teamScaleModel.src}
                   alt={img.teamScaleModel.alt}

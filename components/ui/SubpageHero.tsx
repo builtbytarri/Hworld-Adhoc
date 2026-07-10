@@ -40,7 +40,7 @@ export default function SubpageHero({
   return (
     <section
       className="relative flex overflow-hidden bg-[#0E0E0E]"
-      style={{ minHeight: compact ? "clamp(80px, 10dvh, 100px)" : "clamp(300px, 48dvh, 500px)" }}
+      style={{ minHeight: compact ? "var(--v-hero-slim)" : "clamp(300px, 48dvh, 500px)" }}
     >
       <KenBurnsImage
         src={imageSrc}
@@ -54,7 +54,7 @@ export default function SubpageHero({
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className={`relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 lg:px-10 ${compact ? "pb-5 pt-[80px] lg:pt-[84px] lg:pb-6" : "pb-12 pt-32"}`}>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 lg:px-10 ${compact ? "pb-[var(--v-hero-pad)] pt-[max(80px,calc(var(--v-hero-slim)*0.45))]" : "pb-12 pt-32"}`}>
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,12 +64,12 @@ export default function SubpageHero({
           {eyebrow}
         </motion.p>
 
-        <h1>
+        <h1 className={`font-bold tracking-[-0.03em] ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.05]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}>
           <motion.span
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
-            className={`block font-bold leading-[1.05] tracking-[-0.03em] text-white ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}
+            className="text-white"
           >
             {headingWhite}
           </motion.span>
@@ -78,9 +78,9 @@ export default function SubpageHero({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
-              className={`block font-bold leading-[1.05] tracking-[-0.03em] text-amber-500 ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}
+              className="text-amber-500"
             >
-              {headingAmber}
+              {" "}{headingAmber}
             </motion.span>
           )}
         </h1>

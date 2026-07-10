@@ -68,7 +68,7 @@ function BentoCard({ children, className = "", href, disabled = false, enableTil
     <Tag
       {...(href ? { href } : {})}
       ref={ref as never}
-      className={`bento-card card relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#DDD9D2] bg-[#FAFAF8] p-6 lg:p-7 transition-shadow duration-300 will-change-transform ${className}`.trim()}
+      className={`bento-card card relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#DDD9D2] bg-[#FAFAF8] p-6 md:p-[var(--v-card)] transition-shadow duration-300 will-change-transform ${className}`.trim()}
       style={{ position: "relative" }}
     >
       {children}
@@ -156,9 +156,10 @@ interface MagicBentoProps {
   items: BentoItem[];
   className?: string;
   enableTilt?: boolean;
+  fillHeight?: boolean;
 }
 
-export default function MagicBento({ items, className = "", enableTilt = true }: MagicBentoProps) {
+export default function MagicBento({ items, className = "", enableTilt = true, fillHeight = false }: MagicBentoProps) {
   const gridRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -207,11 +208,11 @@ export default function MagicBento({ items, className = "", enableTilt = true }:
       <GlobalSpotlight gridRef={gridRef} disabled={isMobile} />
 
       <div
-        className={`bento-section grid gap-3 ${className}`.trim()}
+        className={`bento-section grid gap-3 md:gap-4 ${className}`.trim()}
         ref={gridRef}
         style={{
           gridTemplateColumns: "repeat(4, 1fr)",
-          gridAutoRows: "minmax(180px, auto)",
+          gridAutoRows: fillHeight ? "1fr" : "minmax(var(--v-bento-row, 160px), auto)",
         }}
       >
         {items.map((item, i) => {
@@ -228,7 +229,7 @@ export default function MagicBento({ items, className = "", enableTilt = true }:
                   {item.label}
                 </span>
               </div>
-              <div className="mt-auto pt-6">
+              <div className="mt-auto pt-6 md:pt-[var(--v-block-sm)]">
                 <h3 className="text-[clamp(1.1rem,1.8vw,1.4rem)] font-semibold leading-[1.15] tracking-[-0.02em] text-[#0E0E0E]">
                   {item.title}
                 </h3>

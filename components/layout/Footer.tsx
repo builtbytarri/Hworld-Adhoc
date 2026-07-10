@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { visibleManagementServices, forensicsServices } from "@/lib/services";
 
 /*
@@ -23,14 +24,15 @@ export default function Footer() {
 
           {/* Brand — takes 2 cols on large */}
           <div className="col-span-2 lg:col-span-2">
-            <div className="mb-2">
-              <span className="text-sm font-bold tracking-[0.15em] text-[#0E0E0E]">
-                H<span className="text-amber-600">•</span>WORLD
-              </span>
-              <p className="mt-0.5 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
-                Ad Hoc Services
-              </p>
-            </div>
+            <Link href="/" className="mb-2 inline-block">
+              <Image
+                src="/logo.png"
+                alt="H-World Ad Hoc — Project Planning & Controls"
+                width={1080}
+                height={1080}
+                className="h-14 w-auto lg:h-16"
+              />
+            </Link>
             <p className="mt-2 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">
               Expert project management, planning, and forensics support — deployed when you need it most.
             </p>

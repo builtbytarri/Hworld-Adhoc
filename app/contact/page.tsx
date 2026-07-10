@@ -58,10 +58,11 @@ export default function ContactPage() {
 
   return (
     <>
+      <div className="flex min-h-[100dvh] flex-col">
       {/* ── HERO — slim, matches service detail treatment ── */}
       <section
         className="relative flex overflow-hidden bg-[#0E0E0E]"
-        style={{ minHeight: "clamp(120px, 20dvh, 180px)" }}
+        style={{ minHeight: "var(--v-hero-slim)" }}
       >
         <KenBurnsImage
           src={img.handsBlueprints.src}
@@ -96,9 +97,9 @@ export default function ContactPage() {
       </section>
 
       {/* ── FORM + CONTACT DETAILS ── */}
-      <section className="bg-white py-8 lg:py-10">
-        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[320px_1fr] lg:gap-20">
+      <section className="flex flex-1 flex-col justify-center bg-white py-8 md:py-[var(--v-section)]">
+        <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[320px_1fr] lg:gap-12">
 
             {/* Contact details */}
             <div>
@@ -106,12 +107,12 @@ export default function ContactPage() {
                 <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#0E0E0E]">
                   We respond within 24 hours.
                 </h2>
-                <p className="mt-4 text-[16px] font-light leading-relaxed text-[#0E0E0E]/55">
+                <p className="mt-3 text-[length:var(--v-text)] font-light leading-relaxed text-[#0E0E0E]/55">
                   Tell us about your project, the challenge you&apos;re facing, and the support you need.
                 </p>
               </AnimatedSection>
 
-              <div className="mt-10 space-y-6 border-t border-[#EBEBEB] pt-8">
+              <div className="mt-6 md:mt-[var(--v-block-sm)] space-y-4 md:space-y-[var(--v-block-sm)] border-t border-[#EBEBEB] pt-5 md:pt-[var(--v-block-sm)]">
                 {/* Email */}
                 <AnimatedSection delay={0.05} className="flex items-start gap-4">
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#F8F7F5] text-amber-600">
@@ -166,42 +167,42 @@ export default function ContactPage() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="rounded-2xl border border-[#EBEBEB] bg-[#F8F7F5] p-8 lg:p-10">
-                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                    <div className="flex flex-col gap-2">
+                <form onSubmit={handleSubmit} className="rounded-2xl border border-[#EBEBEB] bg-[#F8F7F5] p-5 md:p-[var(--v-card)]">
+                  <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:gap-y-[var(--v-form-y)] lg:gap-x-8 sm:grid-cols-2">
+                    <div className="flex flex-col gap-1.5">
                       <label htmlFor="name" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Full Name *</label>
                       <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="James Okafor"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-3 text-[15px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <label htmlFor="company" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Company</label>
                       <input id="company" name="company" type="text" value={form.company} onChange={handleChange} placeholder="Meridian Construction Ltd"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-3 text-[15px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <label htmlFor="email" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Email Address *</label>
                       <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="james@meridian.co.uk"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-3 text-[15px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-1.5">
                       <label htmlFor="enquiryType" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Service Area</label>
                       <select id="enquiryType" name="enquiryType" value={form.enquiryType} onChange={handleChange}
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-3 text-[15px] text-[#0E0E0E] focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors">
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors">
                         <option value="">Select a service...</option>
                         {enquiryTypes.map((t) => <option key={t} value={t}>{t}</option>)}
                       </select>
                     </div>
-                    <div className="flex flex-col gap-2 sm:col-span-2">
+                    <div className="flex flex-col gap-1.5 sm:col-span-2">
                       <label htmlFor="message" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Your Message *</label>
-                      <textarea id="message" name="message" required rows={5} value={form.message} onChange={handleChange}
+                      <textarea id="message" name="message" required rows={3} value={form.message} onChange={handleChange}
                         placeholder="Describe your project, the challenge you're facing, and the type of support you need..."
-                        className="resize-none rounded-xl border border-[#E5E2DC] bg-white px-4 py-3 text-[15px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="resize-none rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
                   </div>
-                  <div className="mt-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                  <div className="mt-4 md:mt-[var(--v-block-sm)] flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
                     <p className="text-[13px] font-light text-[#0E0E0E]/35">We typically respond within one business day.</p>
                     <button type="submit"
-                      className="group inline-flex items-center gap-2.5 rounded-full bg-amber-600 px-7 py-3.5 text-[13px] font-semibold tracking-wide text-white transition-[background-color,transform] duration-150 hover:bg-amber-500 active:scale-[0.97]">
+                      className="group inline-flex items-center gap-2.5 rounded-full bg-amber-600 px-7 py-3 text-[13px] font-semibold tracking-wide text-white transition-[background-color,transform] duration-150 hover:bg-amber-500 active:scale-[0.97]">
                       Send Enquiry
                       <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5">
                         <ArrowRight size={13} strokeWidth={2} />
@@ -214,6 +215,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      </div>
 
       {/* ── HEAD OFFICE MAP — OpenStreetMap embed (free, no API key) ── */}
       <section className="bg-[#F8F7F5] py-14 lg:py-16">

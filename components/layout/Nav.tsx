@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { visibleManagementServices, forensicsServices } from "@/lib/services";
@@ -52,17 +53,17 @@ export default function Nav() {
             : "border-b border-white/10 bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-4 lg:px-10">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="flex flex-col">
-              <span className={`font-sans text-sm font-bold tracking-[0.15em] transition-colors duration-200 ${scrolled ? "text-charcoal" : "text-white"}`}>
-                H<span className="text-amber-600">•</span>WORLD
-              </span>
-              <span className={`font-sans font-medium text-[9px] uppercase tracking-[0.2em] transition-colors duration-200 ${scrolled ? "text-slate-400" : "text-white/50"}`}>
-                Ad Hoc Services
-              </span>
-            </div>
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-3 lg:px-10">
+          {/* Logo — H-World Ad Hoc combined mark (height scales with viewport) */}
+          <Link href="/" className="group flex items-center">
+            <Image
+              src="/logo.png"
+              alt="H-World Ad Hoc — Project Planning & Controls"
+              width={1080}
+              height={1080}
+              priority
+              className="h-[var(--v-logo)] w-auto"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -190,13 +191,8 @@ export default function Nav() {
       {mobileOpen && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-charcoal">
           <div className="flex items-center justify-between px-6 py-5">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="flex flex-col">
-              <span className="font-sans font-medium text-sm font-bold tracking-[0.15em] text-white">
-                H<span className="text-amber-600">•</span>WORLD
-              </span>
-              <span className="font-sans font-medium text-[9px] uppercase tracking-[0.2em] text-white/40">
-                Ad Hoc Services
-              </span>
+            <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
+              <Image src="/logo.png" alt="H-World Ad Hoc — Project Planning & Controls" width={1080} height={1080} className="h-12 w-auto" />
             </Link>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-xl text-white/60 hover:text-white"
