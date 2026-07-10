@@ -92,10 +92,10 @@
   --v-block-sm:  calc(0.25rem + var(--vt) * 2rem);     /*  4 → 36  gap after hairline divider*/
   --v-stack:     calc(0.375rem+ var(--vt) * 0.5rem);   /*  6 → 14  sidebar / small stacks    */
 
-  /* Navbar logo — compact on short viewports so the fixed nav stays ~64px tall
-   * (its original height) and never overlaps the full-bleed hero content; grows
-   * on tall screens where heroes are tall and there's room to spare. */
-  --v-logo:      calc(40px    + var(--vt) * 16px);     /* 40 → 56  navbar logo height          */
+  /* Navbar logo — compact on short viewports so the fixed nav stays clear of
+   * the full-bleed hero content; grows on tall screens where heroes are tall
+   * and there's room to spare. Bumped up (client: logo read as too small/timid). */
+  --v-logo:      calc(56px    + var(--vt) * 20px);     /* 56 → 76  navbar logo height          */
 
   /* Hero */
   --v-hero:      calc(150px   + var(--vt) * 130px);    /* 150 → 280  standard subpage hero    */

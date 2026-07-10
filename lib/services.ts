@@ -255,6 +255,20 @@ export const forensicsServices: Service[] = [
   },
 ];
 
+/*
+ * Common toolset used across the whole practice — appended to every service's
+ * own tools on the detail pages so each "Tools We Use" section is consistent
+ * (and fills the page). Deduplicated against any service-specific tools.
+ */
+export const commonTools = [
+  "Primavera P6",
+  "Asta Powerproject",
+  "Microsoft Project",
+  "Aphex",
+  "Nodes & Link",
+  "Acumen Fuse",
+];
+
 export const visibleManagementServices = managementServices.filter((s) => !s.hidden);
 
 export const allServices = [...managementServices, ...forensicsServices];

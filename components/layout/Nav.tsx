@@ -53,11 +53,11 @@ export default function Nav() {
             : "border-b border-white/10 bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-3 lg:px-10">
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-2 lg:px-10">
           {/* Logo — H-World Ad Hoc combined mark (height scales with viewport) */}
           <Link href="/" className="group flex items-center">
             <Image
-              src="/logo.png"
+              src="/logo2.png"
               alt="H-World Ad Hoc — Project Planning & Controls"
               width={1080}
               height={1080}
@@ -192,7 +192,7 @@ export default function Nav() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-charcoal">
           <div className="flex items-center justify-between px-6 py-5">
             <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
-              <Image src="/logo.png" alt="H-World Ad Hoc — Project Planning & Controls" width={1080} height={1080} className="h-12 w-auto" />
+              <Image src="/logo2.png" alt="H-World Ad Hoc — Project Planning & Controls" width={1080} height={1080} className="h-14 w-auto" />
             </Link>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-xl text-white/60 hover:text-white"

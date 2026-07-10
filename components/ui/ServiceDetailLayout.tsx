@@ -20,7 +20,7 @@ import {
   Box, Briefcase, Calculator, Users, BarChart2,
   Search, Scale, Gavel, CheckCircle2, ArrowLeft, ArrowRight,
 } from "lucide-react";
-import { Service } from "@/lib/services";
+import { Service, commonTools } from "@/lib/services";
 import AnimatedSection from "./AnimatedSection";
 import KenBurnsImage from "./KenBurnsImage";
 import FooterCTA from "@/components/home/FooterCTA";
@@ -41,6 +41,8 @@ interface ServiceDetailLayoutProps {
 
 export default function ServiceDetailLayout({ service, related }: ServiceDetailLayoutProps) {
   const Icon = iconMap[service.icon] ?? LayoutGrid;
+  // Service-specific tools first, then the common practice-wide toolset (deduped).
+  const tools = Array.from(new Set([...(service.tools ?? []), ...commonTools]));
   const backHref  = service.category === "management" ? "/services"  : "/forensics";
   const backLabel = service.category === "management" ? "Management Services" : "Forensics Services";
   const eyebrow   = service.category === "management" ? "Management Service"  : "Forensics Service";
@@ -148,27 +150,25 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
                 </div>
               </AnimatedSection>
 
-              {/* Tools — inline below text */}
-              {service.tools && service.tools.length > 0 && (
-                <AnimatedSection delay={0.15} className="mt-7 md:mt-[var(--v-block)]">
-                  <div className="h-px bg-[#EBEBEB]" />
-                  <div className="mt-5 md:mt-[var(--v-block-sm)]">
-                    <p className="mb-3 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
-                      Tools We Use
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {service.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="rounded-full border border-amber-600/20 bg-amber-50 px-4 py-1.5 text-[13px] font-medium text-amber-700"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
+              {/* Tools — inline below text (service-specific + common practice tools) */}
+              <AnimatedSection delay={0.15} className="mt-7 md:mt-[var(--v-block)]">
+                <div className="h-px bg-[#EBEBEB]" />
+                <div className="mt-5 md:mt-[var(--v-block-sm)]">
+                  <p className="mb-3 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                    Tools We Use
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {tools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="rounded-full border border-amber-600/20 bg-amber-50 px-4 py-1.5 text-[13px] font-medium text-amber-700"
+                      >
+                        {tool}
+                      </span>
+                    ))}
                   </div>
-                </AnimatedSection>
-              )}
+                </div>
+              </AnimatedSection>
             </div>
 
             {/* Right — sidebar */}
