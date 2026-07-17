@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="mb-2 inline-block">
               <Image
-                src="/logo2.png"
+                src="/logob.png"
                 alt="H-World Ad Hoc, Project Planning & Controls"
                 width={1080}
                 height={1080}
