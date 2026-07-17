@@ -138,14 +138,14 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
                     How We Work
                   </p>
                   <p className="text-[length:var(--v-text)] font-light leading-[1.7] text-[#0E0E0E]/60">
-                    H-World professionals integrate directly into your project structure from day one.
-                    We align to your existing governance, tools, and reporting cadence — providing
-                    specialist capability without friction. Whether you need one embedded expert
-                    or a small controls team, we deploy the right resource in the right configuration.
+                    We are built for the moment you need expertise and can&apos;t wait to hire it.
+                    A specialist joins your project within days, aligned to your governance, tools
+                    and reporting cadence, and contributing from day one. Take one embedded expert
+                    or a small team, for a single task or a full programme.
                   </p>
                   <p className="mt-3 md:mt-[var(--v-block-sm)] text-[length:var(--v-text)] font-light leading-[1.7] text-[#0E0E0E]/60">
-                    All outputs are transparent, auditable, and produced to a standard that holds up
-                    under scrutiny — whether in a board review or a formal dispute.
+                    Every output is transparent, auditable and yours to keep, produced to a
+                    standard that holds up in a board review or a formal dispute.
                   </p>
                 </div>
               </AnimatedSection>
@@ -198,7 +198,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
                     Deploy This Service
                   </p>
                   <p className="text-[13px] font-light leading-relaxed text-white/55">
-                    Need {service.title} support? Get in touch — we respond within 24 hours.
+                    Need {service.title} support? Get in touch and we&apos;ll respond within 24 hours.
                   </p>
                   <Link
                     href="/contact"

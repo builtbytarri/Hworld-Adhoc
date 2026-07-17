@@ -48,7 +48,7 @@ export default function SectorsHero() {
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
             className="text-white"
           >
-            Eight sectors.{" "}
+            We hold every sector{" "}
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 18 }}
@@ -56,7 +56,7 @@ export default function SectorsHero() {
             transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
             className="text-amber-500"
           >
-            One standard.
+            to the same standard.
           </motion.span>
         </h1>
 
@@ -66,8 +66,8 @@ export default function SectorsHero() {
           transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
           className="short-hide mt-2 max-w-lg text-[14px] font-light leading-relaxed text-white/55"
         >
-          Our professionals have carried live programmes across every sector we serve —
-          bringing genuine domain knowledge, not just planning theory.
+          Our specialists have run live programmes in these sectors before, so they arrive
+          with genuine domain knowledge rather than planning theory.
         </motion.p>
       </div>
     </section>

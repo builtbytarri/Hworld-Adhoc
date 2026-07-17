@@ -10,7 +10,7 @@ export const sectors: Sector[] = [
     slug: "commercial-residential",
     title: "Commercial & Residential",
     description:
-      "From mixed-use urban developments to large-scale residential schemes — planning, controls, and commercial management for complex building projects.",
+      "From mixed-use urban developments to large-scale residential schemes, we provide planning, controls and commercial management for complex building projects.",
     icon: "Building2",
   },
   {
@@ -45,7 +45,7 @@ export const sectors: Sector[] = [
     slug: "oil-gas",
     title: "Oil & Gas",
     description:
-      "Offshore and onshore oil and gas projects — from FEED through to commissioning. Planning, controls, and commercial management for HSSE-critical environments.",
+      "Offshore and onshore oil and gas projects, from FEED through to commissioning. We bring planning, controls and commercial management to HSSE-critical environments.",
     icon: "Droplets",
   },
   {

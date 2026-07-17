@@ -53,14 +53,14 @@ export default function Footer() {
             <Link href="/" className="mb-2 inline-block">
               <Image
                 src="/logo2.png"
-                alt="H-World Ad Hoc — Project Planning & Controls"
+                alt="H-World Ad Hoc, Project Planning & Controls"
                 width={1080}
                 height={1080}
                 className="h-20 w-auto lg:h-24"
               />
             </Link>
             <p className="mt-2 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">
-              Expert project management, planning, and forensics support — deployed when you need it most.
+              Expert project management, planning and forensics support, deployed when you need it most.
             </p>
             <a
               href="mailto:adhoc@hworldinc.com"
@@ -73,7 +73,7 @@ export default function Footer() {
           {/* Management */}
           <div>
             <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
-              Management
+              Ad Hoc Management
             </h4>
             <ul className="space-y-1.5">
               {visibleManagementServices.map((s) => (
@@ -92,7 +92,7 @@ export default function Footer() {
           {/* Forensics — own column */}
           <div>
             <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
-              Forensics
+              Ad Hoc Forensics
             </h4>
             <ul className="space-y-1.5">
               {forensicsServices.map((s) => (

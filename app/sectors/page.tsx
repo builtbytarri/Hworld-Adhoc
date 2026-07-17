@@ -42,7 +42,7 @@ export default function SectorsPage() {
               Our Sectors
             </p>
             <h2 className="max-w-2xl text-[clamp(1.4rem,2.5vw,2rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[#0E0E0E]">
-              Deep domain experience. Genuine sector knowledge.
+              Deep, genuine experience in every sector we work in.
             </h2>
           </AnimatedSection>
 

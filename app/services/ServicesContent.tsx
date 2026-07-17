@@ -29,9 +29,10 @@ export default function ServicesContent() {
     <>
       <div className="flex min-h-[100dvh] flex-col">
         <SubpageHero
-          eyebrow="Management Services"
+          eyebrow="Ad Hoc Management Services"
           headingWhite="Expert support across"
           headingAmber="every phase of delivery."
+          subline="Take one discipline or several, embedded in your team for a busy period, an urgent review, or a full delivery programme, and working within days."
           imageSrc={img.handsBlueprints.src}
           imageAlt={img.handsBlueprints.alt}
           imagePosition="60% 50%"

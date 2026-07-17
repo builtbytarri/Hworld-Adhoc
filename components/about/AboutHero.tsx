@@ -51,7 +51,7 @@ export default function AboutHero() {
             transition={{ duration: 0.75, delay: 0.15, ease: EASE }}
             className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-white"
           >
-            Built for the gap.
+            We fill the gap you can&apos;t wait to hire for,
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 18 }}
@@ -59,7 +59,7 @@ export default function AboutHero() {
             transition={{ duration: 0.75, delay: 0.25, ease: EASE }}
             className="block text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.0] tracking-[-0.03em] text-amber-500"
           >
-            Trusted on the programme.
+            and earn our place on the programme.
           </motion.span>
         </h1>
       </div>

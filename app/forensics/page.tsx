@@ -4,7 +4,7 @@ import ForensicsContent from "./ForensicsContent";
 export const metadata: Metadata = {
   title: "Forensics Services",
   description:
-    "Rigorous, evidence-based forensic analysis — claims analysis, dispute resolution, and expert witness services for construction and infrastructure projects.",
+    "Rigorous, evidence-based forensic analysis covering claims analysis, dispute resolution and expert witness services for construction and infrastructure projects.",
 };
 
 export default function ForensicsPage() {

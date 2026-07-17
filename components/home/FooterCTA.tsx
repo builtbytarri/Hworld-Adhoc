@@ -57,11 +57,11 @@ export default function FooterCTA() {
             Ready When You Are
           </p>
           <h2 className="mx-auto max-w-2xl text-[clamp(1.75rem,3.5vw,2.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-white">
-            Ready to transform your project planning?
+            Need a specialist on your programme this week?
           </h2>
           <p className="mx-auto mt-3 max-w-md text-[15px] font-light leading-relaxed text-white/55">
-            Contact us to discuss how our expertise can help your organisation
-            deliver projects more effectively.
+            Tell us the gap you need filled. We&apos;ll have the right expert on your
+            programme within days, for as much or as little as the work needs.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">

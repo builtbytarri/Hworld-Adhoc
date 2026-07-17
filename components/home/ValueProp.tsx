@@ -34,8 +34,8 @@ const panels = [
     alt: img.handsBlueprints.alt,
     position: "60% 50%",
     num: "01",
-    title: "Rapid resource deployment.",
-    body: "A last-minute planning gap, an urgent programme review, unplanned forensic exposure — we deploy trusted specialists within days, not months.",
+    title: "Deployed in days, not months.",
+    body: "When a planning gap, an urgent review or a forensic exposure lands, we mobilise a trusted specialist within days, with no downtime and someone contributing from the first morning.",
   },
   {
     src: img.inspectors.src,
@@ -43,7 +43,7 @@ const panels = [
     position: "50% 35%",
     num: "02",
     title: "Tools-first methodology.",
-    body: "Our professionals lead with the industry's standard tools — P6, MS Project, Asta, Aphex, Synchro — so outputs are immediately usable and auditable.",
+    body: "Our professionals lead with the industry's standard tools, including P6, MS Project, Asta, Aphex and Synchro, so every output is immediately usable and auditable.",
   },
   {
     src: img.architectsBlueprint.src,
@@ -51,7 +51,7 @@ const panels = [
     position: "50% 30%",
     num: "03",
     title: "Sector intelligence.",
-    body: "From energy to rail, oil & gas to marine, commercial to infrastructure — our experts carry genuine domain knowledge, not just planning theory.",
+    body: "From energy to rail, oil and gas to marine, commercial to infrastructure, our experts carry genuine domain knowledge rather than just planning theory.",
   },
 ];
 
@@ -72,12 +72,12 @@ export default function ValueProp() {
             The Ad Hoc Advantage
           </p>
           <h2 className="text-[clamp(1.9rem,3.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#0E0E0E]">
-            Flexible support for critical moments.
+            We put a specialist on your programme the moment you need one.
           </h2>
           <p className="mt-3 text-[15px] font-light leading-relaxed text-[#0E0E0E]/55">
-            H-World&apos;s Ad Hoc Services division is built to fill the gaps — fast.
-            Whether it&apos;s last-minute planning resource, urgent programme analysis, or
-            forensic support, we deploy trusted experts and tools to keep your project on track.
+            H-World&apos;s Ad Hoc division exists for the moment you need an expert and can&apos;t
+            wait to hire one. We put a trusted specialist on your programme within days, do the
+            work to the standard a major project demands, and hand it back cleanly once it&apos;s done.
           </p>
           <Link
             href="/services"

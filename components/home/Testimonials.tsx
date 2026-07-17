@@ -27,7 +27,7 @@ const testimonials: TestimonialItem[] = [
     name: "Programme Director",
     org: "Tier 1 Rail Contractor",
     quote:
-      "H-World had a senior planner embedded on our station upgrade within four days. The recovery programme they built was the reason we held our key milestone — nothing less.",
+      "H-World had a senior planner embedded on our station upgrade within four days. The recovery programme they built was the reason we held our key milestone, nothing less.",
   },
   {
     initials: "CM",
@@ -48,7 +48,7 @@ const testimonials: TestimonialItem[] = [
     name: "Planning Manager",
     org: "Tier 2 Civil Engineering",
     quote:
-      "Best planning resource I've worked with in fifteen years. Embedded on day one, P6 running by day two — and we didn't miss a single update window.",
+      "Best planning resource I've worked with in fifteen years. Embedded on day one, P6 running by day two, and we didn't miss a single update window.",
   },
   {
     initials: "PD",
@@ -62,7 +62,7 @@ const testimonials: TestimonialItem[] = [
     name: "Commercial Director",
     org: "Building Contractor, London",
     quote:
-      "They turned up, got their heads down, and delivered. No noise, no learning curve — just solid controls from the first week.",
+      "They turned up, got their heads down, and delivered. No noise, no learning curve, just solid controls from the first week.",
   },
 ];
 

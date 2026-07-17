@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | H-World Ad Hoc",
   },
   description:
-    "Expert ad hoc project management, planning, controls, and forensics support — deployed rapidly across construction, infrastructure, energy, and rail.",
+    "Expert ad hoc project management, planning, controls and forensics support, deployed on demand across construction, infrastructure, energy and rail, for as long as you need.",
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",

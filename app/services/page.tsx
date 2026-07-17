@@ -4,7 +4,7 @@ import ServicesContent from "./ServicesContent";
 export const metadata: Metadata = {
   title: "Management Services",
   description:
-    "Expert ad hoc project management, planning, controls, and financial services — deployed rapidly at any stage of your project.",
+    "Expert ad hoc management services across planning, controls and project delivery, deployed to your programme within days and for as long as you need.",
 };
 
 export default function ServicesPage() {

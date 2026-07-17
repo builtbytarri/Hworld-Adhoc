@@ -165,9 +165,9 @@ export default function ForensicsContent() {
     <>
       <div className="flex min-h-[100dvh] flex-col">
         <SubpageHero
-          eyebrow="Forensics Services"
-          headingWhite="Rigorous, evidence-based"
-          headingAmber="forensic analysis."
+          eyebrow="Ad Hoc Forensics"
+          headingWhite="Forensic analysis that holds up"
+          headingAmber="when it reaches a dispute."
           imageSrc={img.networkPins.src}
           imageAlt={img.networkPins.alt}
           imagePosition="50% 40%"
@@ -183,7 +183,8 @@ export default function ForensicsContent() {
               Our Disciplines
             </p>
             <p className="text-[14px] font-light text-[#0E0E0E]/45 max-w-md">
-              Select a service to explore what we do and how we do it.
+              Bring us in for a single claim, an independent review, or full expert-witness
+              support, for as long as the dispute demands.
             </p>
           </div>
 

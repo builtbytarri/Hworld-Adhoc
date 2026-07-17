@@ -60,7 +60,7 @@ const serviceCards: CardStackItem[] = [
   {
     id: 5,
     title: "Project Controls",
-    description: "Integrated controls covering schedule, cost, risk and change — the data infrastructure for informed decisions.",
+    description: "Integrated controls covering schedule, cost, risk and change, giving you the data to make informed decisions.",
     imageSrc: img.staffBriefing.src,
     href: "/services/project-controls",
     ctaLabel: "Learn more",
@@ -129,8 +129,8 @@ export default function ServicesGrid() {
             transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
             className="mt-3 text-[14.5px] font-light leading-relaxed text-[#0E0E0E]/50"
           >
-            From mobilisation through completion — and into forensic analysis — our
-            disciplines cover every dimension of project delivery.
+            From mobilisation through to completion, and into forensic analysis, our
+            specialists plug straight into live programmes wherever the gap is.
           </motion.p>
 
           <motion.div

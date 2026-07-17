@@ -108,7 +108,7 @@ export default function ContactPage() {
                   We respond within 24 hours.
                 </h2>
                 <p className="mt-3 text-[length:var(--v-text)] font-light leading-relaxed text-[#0E0E0E]/55">
-                  Tell us about your project, the challenge you&apos;re facing, and the support you need.
+                  Tell us the gap you need filled and when. We&apos;ll have the right specialist on your programme within days.
                 </p>
               </AnimatedSection>
 

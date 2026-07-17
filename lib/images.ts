@@ -59,7 +59,7 @@ export const img = {
 
   networkPins: {
     src: `${BASE}/network-pins.jpg`,
-    alt: "A physical network diagram — silver pins connected by blue thread, representing a critical path programme network.",
+    alt: "A physical network diagram of silver pins connected by blue thread, representing a critical path programme network.",
   },
 
   // ── Abstract / texture (brand-matched) ──

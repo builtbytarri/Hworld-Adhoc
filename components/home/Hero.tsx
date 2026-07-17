@@ -98,7 +98,7 @@ export default function Hero() {
           variants={blurFade(0)}
           className="mb-8 text-[11px] font-medium uppercase tracking-[0.22em] text-white/45"
         >
-          Adhoc project planning and controls
+          Ad Hoc project planning and controls
         </motion.p>
 
         {/* Headline — masked line reveal */}
@@ -132,8 +132,8 @@ export default function Hero() {
           variants={blurFade(2)}
           className="mt-7 max-w-[520px] text-lg font-light leading-relaxed text-white/65"
         >
-          Expert planning, controls, and forensics professionals — deployed into your
-          programme within days. Rapid. Flexible. Sector-proven.
+          Bring in expert planning, controls and forensics professionals, working on your
+          programme within days. Take them for a single review or a full delivery cycle.
         </motion.p>
 
         {/* Bottom row: CTA left, stats right (Biograph layout) */}

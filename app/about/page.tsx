@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const principles = [
   {
     n: "01",
-    heading: "Expert-grade. Always.",
-    body: "Every professional we deploy operates at the standard required by major programmes — not the standard of a general resourcing agency.",
+    heading: "Always expert-grade.",
+    body: "Every professional we deploy operates at the standard required by major programmes, not the standard of a general resourcing agency.",
   },
   {
     n: "02",
@@ -26,7 +26,7 @@ const principles = [
   {
     n: "03",
     heading: "Fast but never reckless.",
-    body: "Rapid deployment means the right people ready, the right processes in place — not cutting corners. We start contributing from day one.",
+    body: "Rapid deployment means the right people ready and the right processes in place, not corners cut. We start contributing from day one.",
   },
   {
     n: "04",
@@ -87,8 +87,8 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
                     H-World exists because the market needed something that didn&apos;t exist:
-                    expert-grade planning, controls, and forensic professionals available
-                    on demand — without the friction of permanent hire or the compromise
+                    expert-grade planning, controls and forensic professionals available
+                    on demand, without the wait of a permanent hire or the compromise
                     of a generalist agency.
                   </p>
                   <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
@@ -103,13 +103,13 @@ export default function AboutPage() {
                     How We Work
                   </h3>
                   <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
-                    We embed into your team. We align to your governance, your tools,
-                    and your reporting cadence from day one — not as consultants who
+                    We embed into your team. We align to your governance, your tools
+                    and your reporting cadence from day one, not as consultants who
                     parachute in and leave, but as professionals who carry the work
                     alongside you.
                   </p>
                   <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
-                    The goal is always to deliver value immediately — and to leave your
+                    The goal is always to deliver value immediately, and to leave your
                     team stronger than we found it.
                   </p>
                 </AnimatedSection>
@@ -167,8 +167,8 @@ export default function AboutPage() {
               Our Mission
             </p>
             <blockquote className="mx-auto max-w-3xl text-[clamp(1.2rem,2.2vw,1.9rem)] font-medium leading-[1.3] tracking-[-0.02em] text-white">
-              &ldquo;To give project owners, contractors, and developers direct access
-              to specialist planning and forensic capability — flexibly, responsively,
+              &ldquo;To give project owners, contractors and developers direct access
+              to specialist planning and forensic capability, flexibly, responsively,
               and at the quality level that major programmes demand.&rdquo;
             </blockquote>
           </AnimatedSection>
@@ -237,7 +237,7 @@ export default function AboutPage() {
               How We Operate
             </p>
             <h2 className="text-[clamp(1.5rem,2.5vw,2.25rem)] font-medium leading-[1.05] tracking-[-0.025em] text-[#0E0E0E]">
-              Four principles. No exceptions.
+              Four principles we never compromise on.
             </h2>
           </AnimatedSection>
 

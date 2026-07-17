@@ -58,7 +58,7 @@ export default function Nav() {
           <Link href="/" className="group flex items-center">
             <Image
               src="/logo2.png"
-              alt="H-World Ad Hoc — Project Planning & Controls"
+              alt="H-World Ad Hoc, Project Planning & Controls"
               width={1080}
               height={1080}
               priority
@@ -79,7 +79,7 @@ export default function Nav() {
                 onClick={() => { setMgmtOpen(!mgmtOpen); setForensicsOpen(false); }}
                 aria-expanded={mgmtOpen}
               >
-                Management Services
+                Ad Hoc Management
                 <ChevronDown
                   size={12}
                   strokeWidth={2}
@@ -90,7 +90,7 @@ export default function Nav() {
                 <div className="absolute top-full left-1/2 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-[#E5E2DC] bg-white p-3 shadow-[0_16px_48px_rgba(0,0,0,0.1)]">
                   <div className="mb-2 px-3 pt-1">
                     <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-400">
-                      Management
+                      Ad Hoc Management
                     </span>
                   </div>
                   {visibleManagementServices.map((s) => (
@@ -109,7 +109,7 @@ export default function Nav() {
                       onClick={() => setMgmtOpen(false)}
                       className="block rounded-xl px-3 py-2 font-sans font-medium text-[10px] uppercase tracking-widest text-amber-600 transition-colors hover:bg-amber-50"
                     >
-                      View All Services
+                      All Ad Hoc Services
                     </Link>
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function Nav() {
                 onClick={() => { setForensicsOpen(!forensicsOpen); setMgmtOpen(false); }}
                 aria-expanded={forensicsOpen}
               >
-                Forensics
+                Ad Hoc Forensics
                 <ChevronDown
                   size={12}
                   strokeWidth={2}
@@ -134,7 +134,7 @@ export default function Nav() {
                 <div className="absolute top-full left-1/2 mt-3 w-60 -translate-x-1/2 rounded-2xl border border-[#E5E2DC] bg-white p-3 shadow-[0_16px_48px_rgba(0,0,0,0.1)]">
                   <div className="mb-2 px-3 pt-1">
                     <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-400">
-                      Forensics
+                      Ad Hoc Forensics
                     </span>
                   </div>
                   {forensicsServices.map((s) => (
@@ -153,7 +153,7 @@ export default function Nav() {
                       onClick={() => setForensicsOpen(false)}
                       className="block rounded-xl px-3 py-2 font-sans font-medium text-[10px] uppercase tracking-widest text-amber-600 transition-colors hover:bg-amber-50"
                     >
-                      Forensics Overview
+                      All Ad Hoc Forensics
                     </Link>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function Nav() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-charcoal">
           <div className="flex items-center justify-between px-6 py-5">
             <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
-              <Image src="/logo2.png" alt="H-World Ad Hoc — Project Planning & Controls" width={1080} height={1080} className="h-14 w-auto" />
+              <Image src="/logo2.png" alt="H-World Ad Hoc, Project Planning & Controls" width={1080} height={1080} className="h-14 w-auto" />
             </Link>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-xl text-white/60 hover:text-white"
@@ -206,13 +206,13 @@ export default function Nav() {
           <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-6 pt-4">
             {[
               { href: "/", label: "Home" },
-              { href: "/services", label: "All Management Services" },
+              { href: "/services", label: "All Ad Hoc Management" },
               ...visibleManagementServices.map((s) => ({
                 href: `/services/${s.slug}`,
                 label: s.title,
                 indent: true,
               })),
-              { href: "/forensics", label: "All Forensics" },
+              { href: "/forensics", label: "All Ad Hoc Forensics" },
               ...forensicsServices.map((s) => ({
                 href: `/forensics/${s.slug}`,
                 label: s.title,
