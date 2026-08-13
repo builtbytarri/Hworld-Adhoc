@@ -54,10 +54,12 @@ export default function Nav() {
         }`}
       >
         <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-2 lg:px-10">
-          {/* Logo — H-World Ad Hoc combined mark (height scales with viewport) */}
+          {/* Logo — H-World Ad Hoc combined mark (height scales with viewport)
+              Swaps to the dark-text variant once the nav turns white on scroll,
+              so "Project Planning & Controls" stays legible either way. */}
           <Link href="/" className="group flex items-center">
             <Image
-              src="/logo2.png"
+              src={scrolled ? "/logob.png" : "/logo2.png"}
               alt="H-World Ad Hoc, Project Planning & Controls"
               width={1080}
               height={1080}

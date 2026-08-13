@@ -56,7 +56,7 @@ export default function Footer() {
                 alt="H-World Ad Hoc, Project Planning & Controls"
                 width={1080}
                 height={1080}
-                className="h-20 w-auto lg:h-24"
+                className="h-24 w-auto lg:h-28"
               />
             </Link>
             <p className="mt-2 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">

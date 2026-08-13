@@ -91,16 +91,6 @@ export default function Hero() {
       {/* ── Content, anchored to the base ── */}
       <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-1 flex-col justify-end px-6 pb-20 pt-40 lg:px-10 lg:pb-24">
 
-        {/* Eyebrow */}
-        <motion.p
-          initial="hidden"
-          animate="show"
-          variants={blurFade(0)}
-          className="mb-8 text-[11px] font-medium uppercase tracking-[0.22em] text-white/45"
-        >
-          Ad Hoc project planning and controls
-        </motion.p>
-
         {/* Headline — masked line reveal */}
         <h1 className="font-sans text-white">
           <span className="block">
@@ -110,7 +100,7 @@ export default function Hero() {
               variants={lineReveal(0)}
               className="block text-[clamp(3rem,8vw,7.5rem)] font-medium leading-[0.95] tracking-[-0.02em]"
             >
-              Planning &amp; Controls,
+              Ad Hoc Planning &amp; Controls,
             </motion.span>
           </span>
           <span className="block">
