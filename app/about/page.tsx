@@ -5,12 +5,61 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import KenBurnsImage from "@/components/ui/KenBurnsImage";
 import FooterCTA from "@/components/home/FooterCTA";
 import { img } from "@/lib/images";
+import { site, absoluteUrl, breadcrumbs, jsonLdProps } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  /* `absolute` bypasses the "%s | H-World Ad Hoc" template — the brand is
+     already in this title and would otherwise appear twice. */
+  title: { absolute: "About H-World Ad Hoc | Part of H-World" },
   description:
-    "H-World is part of the H-World Group. Our Ad Hoc Services division deploys expert planning, controls, and forensics professionals on a flexible, on-demand basis.",
+    "H-World Ad Hoc is the on-demand planning and forensics division of H-World, alongside engineering & construction, marine and deal sourcing.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About H-World Ad Hoc | Part of H-World",
+    description:
+      "The on-demand planning, controls and forensics division of H-World. Expert-grade specialists, deployed when you need them.",
+    url: absoluteUrl("/about"),
+  },
 };
+
+/*
+ * AboutPage schema naming the sister divisions. This is the primary
+ * entity-disambiguation signal on the site: it associates this domain with
+ * "H-World construction" and "H-World marine" without competing against the
+ * parent site for those terms. See SEO-STRATEGY.md §2.
+ */
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${absoluteUrl("/about")}#aboutpage`,
+  url: absoluteUrl("/about"),
+  name: "About H-World Ad Hoc",
+  isPartOf: { "@id": `${site.url}/#website` },
+  mainEntity: {
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    name: site.name,
+    alternateName: [...site.alternateNames],
+    parentOrganization: {
+      "@type": "Organization",
+      name: site.parent.name,
+      url: site.parent.url,
+      description:
+        "H-World operates across ad hoc project planning, engineering & construction, marine, and deal sourcing.",
+      subOrganization: [
+        { "@type": "Organization", name: "H-World Ad Hoc", url: site.url },
+        { "@type": "Organization", name: "H-World Engineering & Construction" },
+        { "@type": "Organization", name: "H-World Marine" },
+        { "@type": "Organization", name: "H-World Deal Sourcing" },
+      ],
+    },
+  },
+};
+
+const breadcrumbSchema = breadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+]);
 
 const principles = [
   {
@@ -59,6 +108,8 @@ const evidencePanels = [
 export default function AboutPage() {
   return (
     <>
+      <script {...jsonLdProps(aboutSchema)} />
+      <script {...jsonLdProps(breadcrumbSchema)} />
       <div className="flex min-h-[100dvh] flex-col">
       {/* 1. HERO — photographic, staggered entrance */}
       <AboutHero />
@@ -95,6 +146,19 @@ export default function AboutPage() {
                     A programme drifting. A claim needing analysis. A controls function
                     that needs standing up from scratch. These are the moments we are
                     built for.
+                  </p>
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                    We are the ad hoc division of{" "}
+                    <a
+                      href={site.parent.url}
+                      target="_blank"
+                      rel="noopener"
+                      className="font-medium text-amber-700 transition-colors hover:text-amber-600"
+                    >
+                      H-World
+                    </a>
+                    , which also delivers engineering and construction, marine, and deal
+                    sourcing.
                   </p>
                 </AnimatedSection>
 

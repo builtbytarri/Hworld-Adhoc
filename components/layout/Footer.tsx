@@ -128,6 +128,18 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              {/* Parent-site link. Declares the group relationship to search
+                  engines and passes authority between the two properties. */}
+              <li>
+                <a
+                  href="https://www.hworldinc.com"
+                  target="_blank"
+                  rel="noopener"
+                  className="text-[13px] font-light text-[#0E0E0E]/60 transition-colors hover:text-[#0E0E0E]"
+                >
+                  H-World Group
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -166,10 +178,25 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Legal entity disclosure.
+            Required of UK companies under the Companies (Trading Disclosures)
+            Regulations 2008 — the registered name, number, place of
+            registration and registered office must appear on the website.
+            It is also what lets identity-verification vendors (Twilio/Persona,
+            payment processors, KYC checks) associate the trading brand
+            "H-World" with the legal entity "Project World Ltd". */}
+        <div className="mt-4 border-t border-[#EBEBEB] pt-3">
+          <p className="text-[11px] font-light leading-relaxed text-[#0E0E0E]/35">
+            H-World and H-World Ad Hoc are trading names of Project World Ltd,
+            a company registered in England and Wales. Company number 15385102.
+            Registered office: 37 Harewood Gardens, Bournemouth, England, BH7 7RH.
+          </p>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-4 flex flex-col items-start justify-between gap-2 border-t border-[#EBEBEB] pt-3 sm:flex-row sm:items-center">
+        <div className="mt-3 flex flex-col items-start justify-between gap-2 border-t border-[#EBEBEB] pt-3 sm:flex-row sm:items-center">
           <p className="text-[11px] font-light text-[#0E0E0E]/30">
-            &copy; {year} H-World. Part of the H-World Group.
+            &copy; {year} Project World Ltd, trading as H-World.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Use"].map((item) => (

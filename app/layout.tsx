@@ -3,6 +3,7 @@ import { Barlow, Barlow_Semi_Condensed } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
+import { site } from "@/lib/site";
 
 /*
  * FONT RATIONALE (impeccable brand.md applied):
@@ -36,17 +37,130 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "H-World Ad Hoc | Programme Management & Planning Consultancy",
+    default: "H-World Ad Hoc | On-Demand Project Planning & Controls",
     template: "%s | H-World Ad Hoc",
   },
-  description:
-    "Expert ad hoc project management, planning, controls and forensics support, deployed on demand across construction, infrastructure, energy and rail, for as long as you need.",
+  description: site.description,
+  applicationName: site.name,
+  /* Brand variants customers actually type. Not a ranking factor on its own,
+   * but harmless and it documents intent alongside the JSON-LD alternateName. */
+  keywords: [
+    "H-World",
+    "HWorld",
+    "H-World Ad Hoc",
+    "H-World Inc",
+    "H-World planning",
+    "ad hoc project planning",
+    "on-demand project controls",
+    "forensic delay analysis UK",
+  ],
+  authors: [{ name: site.parent.name, url: site.parent.url }],
+  creator: site.parent.name,
+  publisher: site.parent.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: "H-World Ad Hoc | On-Demand Project Planning & Controls",
+    description: site.description,
+    url: site.url,
+    locale: "en_GB",
+    images: [{ url: site.ogImage, width: 1080, height: 1080, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "H-World Ad Hoc | On-Demand Project Planning & Controls",
+    description: site.description,
+    images: [site.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
+};
+
+/*
+ * Organization JSON-LD — the single highest-leverage SEO asset on the site.
+ *
+ * This is what tells Google that "H-World" (us) is a DIFFERENT entity from
+ * "H World Group Limited" (NASDAQ: HTHT, the Chinese hotel operator that
+ * currently owns the bare "hworld" query). The alternateName array captures
+ * every spelling variant customers type; parentOrganization + sameAs provide
+ * the corroboration that binds the group's web properties into one entity.
+ */
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${site.url}/#organization`,
+  name: site.name,
+  alternateName: [...site.alternateNames],
+  url: site.url,
+  logo: { "@type": "ImageObject", url: `${site.url}/logo2.png` },
+  image: `${site.url}/logo2.png`,
+  description: site.description,
+  email: site.contact.email,
+  telephone: site.contact.telephone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.contact.address.locality,
+    addressRegion: site.contact.address.region,
+    postalCode: site.contact.address.postalCode,
+    addressCountry: site.contact.address.country,
+  },
+  parentOrganization: {
+    "@type": "Organization",
+    name: site.parent.name,
+    url: site.parent.url,
+  },
+  /* Machine-readable link between the trading brand and the registered
+   * company. Lets automated identity checks resolve "H-World" to
+   * "Project World Ltd" without a human reading the footer. */
+  legalName: site.legal.name,
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "GB-COH",
+    name: "Companies House company number",
+    value: site.legal.companyNumber,
+  },
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Place", name: "Europe" },
+  ],
+  knowsAbout: [
+    "Project planning and controls",
+    "Programme management",
+    "Forensic delay analysis",
+    "Construction claims and dispute resolution",
+    "4D planning",
+  ],
+  sameAs: [...site.sameAs],
+};
+
+/* WebSite schema — enables the sitelinks search box and reinforces the
+ * site-level entity alongside the Organization above. */
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site.url}/#website`,
+  url: site.url,
+  name: site.name,
+  description: site.description,
+  publisher: { "@id": `${site.url}/#organization` },
+  inLanguage: "en-GB",
 };
 
 export default function RootLayout({
@@ -55,8 +169,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${barlowSemiCondensed.variable} ${barlow.variable}`}>
+    <html lang="en-GB" className={`${barlowSemiCondensed.variable} ${barlow.variable}`}>
       <body className="min-h-screen bg-canvas text-charcoal antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <Nav />
         <main>{children}</main>
         <Footer />

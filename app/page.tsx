@@ -1,38 +1,30 @@
-"use client";
-
-import { useEffect } from "react";
+import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import ValueProp from "@/components/home/ValueProp";
-import WhyUs from "@/components/home/WhyUs";
 import Testimonials from "@/components/home/Testimonials";
 import FooterCTA from "@/components/home/FooterCTA";
+import ScrollSnapProvider from "@/components/home/ScrollSnapProvider";
+import { site } from "@/lib/site";
 
 /*
- * Scroll snapping — homepage only.
- * Applies scroll-snap-type to <html> while this page is mounted,
- * cleans up when navigating away so other pages are unaffected.
- * Each section group gets scroll-snap-align: start so the browser
- * always snaps to a clean section boundary on scroll settle.
+ * This is a SERVER component so it can export `metadata`. The scroll-snap
+ * behaviour lives in <ScrollSnapProvider>, a thin client wrapper.
+ * See SEO-STRATEGY.md §3 — the homepage previously carried no metadata at all.
  */
-/* Nav is fixed, ~64px tall. scroll-padding-top shifts every snap point
-   down by that amount so sections never land behind the nav bar.
-   The hero (first section, y=0) is unaffected since scrollTop can't go negative. */
-const NAV_HEIGHT = 64;
-
-function useHomepageSnap() {
-  useEffect(() => {
-    const html = document.documentElement;
-    html.style.scrollSnapType = "y mandatory";
-    html.style.scrollBehavior = "smooth";
-    html.style.scrollPaddingTop = `${NAV_HEIGHT}px`;
-    return () => {
-      html.style.scrollSnapType = "";
-      html.style.scrollBehavior = "";
-      html.style.scrollPaddingTop = "";
-    };
-  }, []);
-}
+export const metadata: Metadata = {
+  title: "H-World Ad Hoc | On-Demand Project Planning & Controls",
+  description:
+    "Expert planning, controls and forensics professionals on your programme within days. H-World Ad Hoc deploys specialists on demand, for as long as you need.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "H-World Ad Hoc | On-Demand Project Planning & Controls",
+    description:
+      "Expert planning, controls and forensics professionals on your programme within days. H-World Ad Hoc deploys specialists on demand, for as long as you need.",
+    url: site.url,
+    type: "website",
+  },
+};
 
 const snapSection = {
   scrollSnapAlign: "start" as const,
@@ -40,10 +32,8 @@ const snapSection = {
 };
 
 export default function HomePage() {
-  useHomepageSnap();
-
   return (
-    <>
+    <ScrollSnapProvider>
       {/* 1 — Hero (full screen, natural snap point) */}
       <div style={snapSection}>
         <Hero />
@@ -59,20 +49,15 @@ export default function HomePage() {
         <ValueProp />
       </div>
 
-      {/* 4 — Why us (hidden) */}
-      {/* <div style={snapSection}>
-        <WhyUs />
-      </div> */}
-
-      {/* 5 — Social proof */}
+      {/* 4 — Social proof */}
       <div style={snapSection}>
         <Testimonials />
       </div>
 
-      {/* 6 — Closing CTA */}
+      {/* 5 — Closing CTA */}
       <div style={snapSection}>
         <FooterCTA />
       </div>
-    </>
+    </ScrollSnapProvider>
   );
 }

@@ -7,12 +7,25 @@ import SectorsHero from "@/components/sectors/SectorsHero";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import FooterCTA from "@/components/home/FooterCTA";
 import { sectors } from "@/lib/sectors";
+import { absoluteUrl, breadcrumbs, jsonLdProps } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Sectors",
+  title: "Sectors We Serve",
   description:
-    "H-World Ad Hoc deploys planning and controls expertise across construction, infrastructure, energy, rail, marine, oil & gas, and public sector projects.",
+    "Rail, energy, marine, oil & gas, infrastructure and commercial construction. H-World Ad Hoc specialists with genuine sector experience.",
+  alternates: { canonical: "/sectors" },
+  openGraph: {
+    title: "Sectors We Serve | H-World Ad Hoc",
+    description:
+      "Rail, energy, marine, oil & gas, infrastructure and commercial construction. Specialists with genuine sector experience.",
+    url: absoluteUrl("/sectors"),
+  },
 };
+
+const breadcrumbSchema = breadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Sectors", path: "/sectors" },
+]);
 
 const iconMap: Record<string, React.ComponentType<{ size?: number; strokeWidth?: number; className?: string }>> = {
   Building2, Globe, Zap, Train, Settings, Droplets, Anchor, Landmark,
@@ -21,6 +34,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; strokeWidth?:
 export default function SectorsPage() {
   return (
     <>
+      <script {...jsonLdProps(breadcrumbSchema)} />
       <div className="flex min-h-[100dvh] flex-col">
       {/* 1. HERO — compact, aerial infrastructure photo */}
       <SectorsHero />
