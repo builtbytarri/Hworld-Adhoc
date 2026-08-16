@@ -59,7 +59,7 @@ export function TestimonialsColumn({
                 </span>
 
                 {/* Quote text */}
-                <p className="text-[13px] font-light leading-[1.65] text-[#0E0E0E]/70 pr-6">
+                <p className="text-[13px] font-light leading-[1.65] text-body pr-6">
                   {quote}
                 </p>
 
@@ -70,7 +70,7 @@ export function TestimonialsColumn({
                   </div>
                   <div>
                     <p className="text-[13px] font-semibold text-[#0E0E0E]">{name}</p>
-                    <p className="text-[11px] font-light text-[#0E0E0E]/45">{org}</p>
+                    <p className="text-[11px] font-light text-body">{org}</p>
                   </div>
                 </div>
               </div>

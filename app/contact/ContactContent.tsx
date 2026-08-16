@@ -107,7 +107,7 @@ export default function ContactContent() {
                 <h2 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold leading-[1.1] tracking-[-0.02em] text-[#0E0E0E]">
                   We respond within 24 hours.
                 </h2>
-                <p className="mt-3 text-[length:var(--v-text)] font-light leading-relaxed text-[#0E0E0E]/55">
+                <p className="mt-3 text-[length:var(--v-text)] font-light leading-relaxed text-body">
                   Tell us the gap you need filled and when. We&apos;ll have the right specialist on your programme within days.
                 </p>
               </AnimatedSection>
@@ -119,7 +119,7 @@ export default function ContactContent() {
                     <Mail size={17} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/35">Email</p>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Email</p>
                     <a href="mailto:adhoc@hworldinc.com" className="mt-1 block text-[15px] font-medium text-[#0E0E0E] transition-colors hover:text-amber-600">
                       adhoc@hworldinc.com
                     </a>
@@ -132,7 +132,7 @@ export default function ContactContent() {
                     <Phone size={17} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/35">Phone</p>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Phone</p>
                     <a href="tel:+441256232342" className="mt-1 block text-[15px] font-medium text-[#0E0E0E] transition-colors hover:text-amber-600">
                       +44 1256 232342
                     </a>
@@ -145,7 +145,7 @@ export default function ContactContent() {
                     <Building2 size={17} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/35">Head Office</p>
+                    <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Head Office</p>
                     {headOffice.lines.map((line) => (
                       <p key={line} className="mt-0.5 text-[15px] font-medium text-[#0E0E0E]">{line}</p>
                     ))}
@@ -162,7 +162,7 @@ export default function ContactContent() {
                     <CheckCircle size={26} strokeWidth={1.5} className="text-amber-600" />
                   </div>
                   <h3 className="text-2xl font-bold tracking-[-0.02em] text-[#0E0E0E]">Enquiry received.</h3>
-                  <p className="mt-3 max-w-[340px] text-[16px] font-light leading-relaxed text-[#0E0E0E]/55">
+                  <p className="mt-3 max-w-[340px] text-[16px] font-light leading-relaxed text-body">
                     A member of our team will be in touch within one business day.
                   </p>
                 </div>
@@ -170,22 +170,22 @@ export default function ContactContent() {
                 <form onSubmit={handleSubmit} className="rounded-2xl border border-[#EBEBEB] bg-[#F8F7F5] p-5 md:p-[var(--v-card)]">
                   <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:gap-y-[var(--v-form-y)] lg:gap-x-8 sm:grid-cols-2">
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="name" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Full Name *</label>
+                      <label htmlFor="name" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Full Name *</label>
                       <input id="name" name="name" type="text" required value={form.name} onChange={handleChange} placeholder="James Okafor"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/72 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="company" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Company</label>
+                      <label htmlFor="company" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Company</label>
                       <input id="company" name="company" type="text" value={form.company} onChange={handleChange} placeholder="Meridian Construction Ltd"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/72 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="email" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Email Address *</label>
+                      <label htmlFor="email" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Email Address *</label>
                       <input id="email" name="email" type="email" required value={form.email} onChange={handleChange} placeholder="james@meridian.co.uk"
-                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/72 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="enquiryType" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Service Area</label>
+                      <label htmlFor="enquiryType" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Service Area</label>
                       <select id="enquiryType" name="enquiryType" value={form.enquiryType} onChange={handleChange}
                         className="rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors">
                         <option value="">Select a service...</option>
@@ -193,14 +193,14 @@ export default function ContactContent() {
                       </select>
                     </div>
                     <div className="flex flex-col gap-1.5 sm:col-span-2">
-                      <label htmlFor="message" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/40">Your Message *</label>
+                      <label htmlFor="message" className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Your Message *</label>
                       <textarea id="message" name="message" required rows={3} value={form.message} onChange={handleChange}
                         placeholder="Describe your project, the challenge you're facing, and the type of support you need..."
-                        className="resize-none rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/25 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
+                        className="resize-none rounded-xl border border-[#E5E2DC] bg-white px-4 py-2.5 text-[14px] text-[#0E0E0E] placeholder:text-[#0E0E0E]/72 focus:border-amber-600 focus:outline-none focus:ring-1 focus:ring-amber-600 transition-colors" />
                     </div>
                   </div>
                   <div className="mt-4 md:mt-[var(--v-block-sm)] flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-                    <p className="text-[13px] font-light text-[#0E0E0E]/35">We typically respond within one business day.</p>
+                    <p className="text-[13px] font-light text-body">We typically respond within one business day.</p>
                     <button type="submit"
                       className="group inline-flex items-center gap-2.5 rounded-full bg-amber-600 px-7 py-3 text-[13px] font-semibold tracking-wide text-white transition-[background-color,transform] duration-150 hover:bg-amber-500 active:scale-[0.97]">
                       Send Enquiry
@@ -271,7 +271,7 @@ export default function ContactContent() {
                   <h3 className="mb-3 text-[16px] font-bold text-[#0E0E0E]">{office.country}</h3>
                   <div className="space-y-0.5">
                     {office.lines.map((line) => (
-                      <p key={line} className="text-[14px] font-light text-[#0E0E0E]/55">{line}</p>
+                      <p key={line} className="text-[14px] font-light text-body">{line}</p>
                     ))}
                   </div>
                 </div>

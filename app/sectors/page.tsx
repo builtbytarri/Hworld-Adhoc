@@ -84,7 +84,7 @@ export default function SectorsPage() {
                     </span>
 
                     {/* Icon */}
-                    <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md bg-[#F8F7F5] text-[#0E0E0E]/50 transition-colors duration-200 group-hover:bg-amber-50 group-hover:text-amber-600">
+                    <div className="mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-md bg-[#F8F7F5] text-[#0E0E0E]/72 transition-colors duration-200 group-hover:bg-amber-50 group-hover:text-amber-600">
                       <Icon size={14} strokeWidth={1.5} />
                     </div>
 
@@ -100,7 +100,7 @@ export default function SectorsPage() {
                           className="flex-shrink-0 text-amber-600 opacity-0 transition-[opacity,transform] duration-200 group-hover:translate-x-1 group-hover:opacity-100"
                         />
                       </div>
-                      <p className="mt-0.5 text-[13px] md:text-[length:var(--v-text-sm)] font-light leading-relaxed text-[#0E0E0E]/50">
+                      <p className="mt-0.5 text-[13px] md:text-[length:var(--v-text-sm)] font-light leading-relaxed text-body">
                         {sector.description}
                       </p>
                     </div>

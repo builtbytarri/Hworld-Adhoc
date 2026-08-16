@@ -120,7 +120,7 @@ export default function Hero() {
           initial="hidden"
           animate="show"
           variants={blurFade(2)}
-          className="mt-7 max-w-[520px] text-lg font-light leading-relaxed text-white/65"
+          className="mt-7 max-w-[520px] text-lg font-normal leading-relaxed text-white/85"
         >
           Bring in expert planning, controls and forensics professionals, working on your
           programme within days. Take them for a single review or a full delivery cycle.
@@ -147,7 +147,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="text-sm font-medium tracking-wide text-white/70 underline-offset-8 transition-colors duration-150 hover:text-white hover:underline"
+              className="text-sm font-semibold tracking-wide text-white underline-offset-8 transition-colors duration-150 hover:text-amber-300 hover:underline"
             >
               Get in touch
             </Link>
@@ -168,7 +168,7 @@ export default function Hero() {
                 <p className="font-sans text-2xl font-semibold tabular-nums text-white">
                   {s.value}
                 </p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-white/45">
+                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/75">
                   {s.label}
                 </p>
               </div>

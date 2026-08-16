@@ -53,13 +53,13 @@ export default function FooterCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: EASE }}
         >
-          <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.22em] text-white/40">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80">
             Ready When You Are
           </p>
           <h2 className="mx-auto max-w-2xl text-[clamp(1.75rem,3.5vw,2.75rem)] font-medium leading-[1.05] tracking-[-0.025em] text-white">
             Need a specialist on your programme this week?
           </h2>
-          <p className="mx-auto mt-3 max-w-md text-[15px] font-light leading-relaxed text-white/55">
+          <p className="mx-auto mt-3 max-w-md text-[15px] font-light leading-relaxed text-white/85">
             Tell us the gap you need filled. We&apos;ll have the right expert on your
             programme within days, for as much or as little as the work needs.
           </p>
@@ -73,7 +73,7 @@ export default function FooterCTA() {
             </Link>
             <Link
               href="/services"
-              className="text-sm font-medium tracking-wide text-white/50 underline-offset-8 transition-colors hover:text-white hover:underline"
+              className="text-sm font-medium tracking-wide text-white underline-offset-8 transition-colors hover:text-amber-300 hover:underline"
             >
               Explore services
             </Link>

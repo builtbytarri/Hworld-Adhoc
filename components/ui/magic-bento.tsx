@@ -233,7 +233,7 @@ export default function MagicBento({ items, className = "", enableTilt = true, f
                 <h3 className="text-[clamp(1.1rem,1.8vw,1.4rem)] font-semibold leading-[1.15] tracking-[-0.02em] text-[#0E0E0E]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[13px] font-light leading-relaxed text-[#0E0E0E]/60 line-clamp-3">
+                <p className="mt-2 text-[13px] font-light leading-relaxed text-body line-clamp-3">
                   {item.description}
                 </p>
               </div>

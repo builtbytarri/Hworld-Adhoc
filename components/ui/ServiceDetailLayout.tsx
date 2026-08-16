@@ -77,7 +77,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
           >
             <Link
               href={backHref}
-              className="mb-3 md:mb-[var(--v-lead-mt)] inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white/70"
+              className="mb-3 md:mb-[var(--v-lead-mt)] inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-white"
             >
               <ArrowLeft size={13} strokeWidth={2} />
               {backLabel}
@@ -108,7 +108,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.32, ease: EASE }}
-            className="mt-2 md:mt-[var(--v-lead-mt)] max-w-[520px] text-[length:var(--v-lead)] font-light leading-relaxed text-white/55"
+            className="mt-2 md:mt-[var(--v-lead-mt)] max-w-[520px] text-[length:var(--v-lead)] font-light leading-relaxed text-white/82"
           >
             {service.shortDesc}
           </motion.p>
@@ -123,10 +123,10 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
             {/* Left — description */}
             <div>
               <AnimatedSection>
-                <p className="mb-2 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                <p className="mb-2 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
                   Overview
                 </p>
-                <p className="text-[length:var(--v-text)] font-light leading-[1.7] text-[#0E0E0E]/65">
+                <p className="text-[length:var(--v-text)] font-light leading-[1.7] text-body">
                   {service.longDesc}
                 </p>
               </AnimatedSection>
@@ -134,16 +134,16 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               <AnimatedSection delay={0.1} className="mt-7 md:mt-[var(--v-block)]">
                 <div className="h-px bg-[#EBEBEB]" />
                 <div className="mt-5 md:mt-[var(--v-block-sm)]">
-                  <p className="mb-2 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                  <p className="mb-2 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
                     How We Work
                   </p>
-                  <p className="text-[length:var(--v-text)] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="text-[length:var(--v-text)] font-light leading-[1.7] text-body">
                     We are built for the moment you need expertise and can&apos;t wait to hire it.
                     A specialist joins your project within days, aligned to your governance, tools
                     and reporting cadence, and contributing from day one. Take one embedded expert
                     or a small team, for a single task or a full programme.
                   </p>
-                  <p className="mt-3 md:mt-[var(--v-block-sm)] text-[length:var(--v-text)] font-light leading-[1.7] text-[#0E0E0E]/60">
+                  <p className="mt-3 md:mt-[var(--v-block-sm)] text-[length:var(--v-text)] font-light leading-[1.7] text-body">
                     Every output is transparent, auditable and yours to keep, produced to a
                     standard that holds up in a board review or a formal dispute.
                   </p>
@@ -154,7 +154,7 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               <AnimatedSection delay={0.15} className="mt-7 md:mt-[var(--v-block)]">
                 <div className="h-px bg-[#EBEBEB]" />
                 <div className="mt-5 md:mt-[var(--v-block-sm)]">
-                  <p className="mb-3 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                  <p className="mb-3 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
                     Tools We Use
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -177,14 +177,14 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               {/* Techniques / Scope */}
               <AnimatedSection delay={0.12}>
                 <div className="rounded-xl border border-[#EBEBEB] bg-[#F8F7F5] p-4 md:p-[var(--v-card)]">
-                  <p className="mb-2.5 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                  <p className="mb-2.5 md:mb-[var(--v-label-mb)] text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
                     {service.category === "forensics" ? "Techniques & Approaches" : "Scope Includes"}
                   </p>
                   <ul className="divide-y divide-[#EBEBEB]">
                     {service.techniques.map((t) => (
                       <li key={t} className="flex items-center gap-2.5 py-2 md:py-[var(--v-li)]">
                         <CheckCircle2 size={13} strokeWidth={2} className="flex-shrink-0 text-amber-600" />
-                        <span className="text-[length:var(--v-text-sm)] font-light leading-tight text-[#0E0E0E]/65">{t}</span>
+                        <span className="text-[length:var(--v-text-sm)] font-light leading-tight text-body">{t}</span>
                       </li>
                     ))}
                   </ul>
@@ -194,10 +194,10 @@ export default function ServiceDetailLayout({ service, related }: ServiceDetailL
               {/* Inline CTA card */}
               <AnimatedSection delay={0.18}>
                 <div className="rounded-xl bg-[#0E0E0E] p-4 md:p-[var(--v-card)]">
-                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-white/30">
+                  <p className="mb-1.5 text-[11px] font-medium uppercase tracking-[0.22em] text-white/70">
                     Deploy This Service
                   </p>
-                  <p className="text-[13px] font-light leading-relaxed text-white/55">
+                  <p className="text-[13px] font-light leading-relaxed text-white/82">
                     Need {service.title} support? Get in touch and we&apos;ll respond within 24 hours.
                   </p>
                   <Link

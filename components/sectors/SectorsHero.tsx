@@ -31,7 +31,7 @@ export default function SectorsHero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(46px,calc(var(--v-hero-slim)*0.4))]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(46px,calc(var(--v-hero-slim)*0.4+1.5px))]">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function SectorsHero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
-          className="short-hide mt-2 max-w-lg text-[14px] font-light leading-relaxed text-white/55"
+          className="short-hide mt-2 max-w-lg text-[14px] font-light leading-relaxed text-white/82"
         >
           Our specialists have run live programmes in these sectors before, so they arrive
           with genuine domain knowledge rather than planning theory.

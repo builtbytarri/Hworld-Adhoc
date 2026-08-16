@@ -55,14 +55,14 @@ function ForensicsAccordionItem({
 
         {/* Title + short desc */}
         <div className="flex-1 min-w-0">
-          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35 mb-0.5">
+          <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80 mb-0.5">
             Forensics Service
           </p>
           <h2 className="text-[1.05rem] font-bold leading-snug tracking-[-0.02em] text-[#0E0E0E]">
             {service.title}
           </h2>
           {!isOpen && (
-            <p className="mt-0.5 text-[13px] font-light text-[#0E0E0E]/50 truncate">
+            <p className="mt-0.5 text-[13px] font-light text-body truncate">
               {service.shortDesc}
             </p>
           )}
@@ -71,7 +71,7 @@ function ForensicsAccordionItem({
         {/* Chevron */}
         <div
           className={`ml-2 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors duration-300 ${
-            isOpen ? "bg-amber-100 text-amber-600" : "bg-[#E8E8E6] text-[#0E0E0E]/50"
+            isOpen ? "bg-amber-100 text-amber-600" : "bg-[#E8E8E6] text-[#0E0E0E]/72"
           }`}
         >
           <motion.div
@@ -101,7 +101,7 @@ function ForensicsAccordionItem({
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_260px]">
                 {/* Left: description + CTA */}
                 <div>
-                  <p className="text-[15px] font-light leading-relaxed text-[#0E0E0E]/60">
+                  <p className="text-[15px] font-light leading-relaxed text-body">
                     {service.longDesc}
                   </p>
                   <Link
@@ -115,7 +115,7 @@ function ForensicsAccordionItem({
 
                 {/* Right: techniques */}
                 <div>
-                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+                  <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
                     Techniques &amp; Approaches
                   </p>
                   <ul className="space-y-2">
@@ -126,7 +126,7 @@ function ForensicsAccordionItem({
                           strokeWidth={2}
                           className="mt-0.5 flex-shrink-0 text-amber-500"
                         />
-                        <span className="text-[13px] font-light text-[#0E0E0E]/65">{t}</span>
+                        <span className="text-[13px] font-light text-body">{t}</span>
                       </li>
                     ))}
                   </ul>
@@ -182,7 +182,7 @@ export default function ForensicsContent() {
             <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-amber-600 mb-1">
               Our Disciplines
             </p>
-            <p className="text-[14px] font-light text-[#0E0E0E]/45 max-w-md">
+            <p className="text-[14px] font-light text-body max-w-md">
               Bring us in for a single claim, an independent review, or full expert-witness
               support, for as long as the dispute demands.
             </p>

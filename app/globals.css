@@ -36,6 +36,23 @@
   --color-amber-800:      #92400E;
   --color-amber-900:      #78350F;
 
+  /*
+   * Text tiers — READABILITY CONTRACT.
+   *
+   * Body prose runs at font-light/300, so it can sit very close to black
+   * without competing with headings: hierarchy comes from WEIGHT and SIZE,
+   * not from fading the text out. Faded grey body copy was the single worst
+   * legibility problem on the site, especially for older readers.
+   *
+   *   text-body   — running prose, paragraphs, descriptions  (13.6:1 on white)
+   *   text-muted  — captions and secondary metadata only      (7.5:1 on white)
+   *
+   * Do NOT drop body copy below --color-body. If something needs to recede,
+   * reduce its size or weight instead of its contrast.
+   */
+  --color-body:           #262626;
+  --color-muted:          #555555;
+
   /* Supporting tones */
   --color-steel:          #334155;
   --color-slate-400:      #94A3B8;

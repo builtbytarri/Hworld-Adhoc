@@ -37,11 +37,15 @@ export default function Nav() {
   }, []);
 
   // Every page opens on a dark hero, so at the top the nav sits on dark: use
-  // light text. Once scrolled onto the light canvas, switch to slate/charcoal.
-  const navLinkClass = `font-sans font-medium text-[11px] uppercase tracking-widest transition-colors duration-200 ${
+  // light text. Once scrolled onto the light canvas, switch to charcoal.
+  //
+  // Both states run at full opacity and semibold. Small uppercase text at 11px
+  // with wide tracking needs the extra weight and full contrast to stay legible
+  // — faded nav links were the worst offender on the whole site.
+  const navLinkClass = `font-sans font-semibold text-[11px] uppercase tracking-widest transition-colors duration-200 ${
     scrolled
-      ? "text-slate-500 hover:text-charcoal"
-      : "text-white/75 hover:text-white"
+      ? "text-[#0E0E0E] hover:text-amber-700"
+      : "text-white hover:text-amber-300"
   }`;
 
   return (
@@ -91,7 +95,7 @@ export default function Nav() {
               {mgmtOpen && (
                 <div className="absolute top-full left-1/2 mt-3 w-72 -translate-x-1/2 rounded-2xl border border-[#E5E2DC] bg-white p-3 shadow-[0_16px_48px_rgba(0,0,0,0.1)]">
                   <div className="mb-2 px-3 pt-1">
-                    <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-400">
+                    <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-600">
                       Ad Hoc Management
                     </span>
                   </div>
@@ -100,7 +104,7 @@ export default function Nav() {
                       key={s.slug}
                       href={`/services/${s.slug}`}
                       onClick={() => setMgmtOpen(false)}
-                      className="block rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-amber-50 hover:text-amber-700"
+                      className="block rounded-xl px-3 py-2 text-sm font-normal text-[#0E0E0E] transition-colors hover:bg-amber-50 hover:text-amber-700"
                     >
                       {s.title}
                     </Link>
@@ -135,7 +139,7 @@ export default function Nav() {
               {forensicsOpen && (
                 <div className="absolute top-full left-1/2 mt-3 w-60 -translate-x-1/2 rounded-2xl border border-[#E5E2DC] bg-white p-3 shadow-[0_16px_48px_rgba(0,0,0,0.1)]">
                   <div className="mb-2 px-3 pt-1">
-                    <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-400">
+                    <span className="font-sans font-medium text-[9px] uppercase tracking-widest text-slate-600">
                       Ad Hoc Forensics
                     </span>
                   </div>
@@ -144,7 +148,7 @@ export default function Nav() {
                       key={s.slug}
                       href={`/forensics/${s.slug}`}
                       onClick={() => setForensicsOpen(false)}
-                      className="block rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-amber-50 hover:text-amber-700"
+                      className="block rounded-xl px-3 py-2 text-sm font-normal text-[#0E0E0E] transition-colors hover:bg-amber-50 hover:text-amber-700"
                     >
                       {s.title}
                     </Link>
@@ -197,7 +201,7 @@ export default function Nav() {
               <Image src="/logo2.png" alt="H-World Ad Hoc, Project Planning & Controls" width={1080} height={1080} className="h-14 w-auto" />
             </Link>
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-xl text-white/60 hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded-xl text-white/80 hover:text-white"
               onClick={() => setMobileOpen(false)}
               aria-label="Close menu"
             >
@@ -230,8 +234,8 @@ export default function Nav() {
                 onClick={() => setMobileOpen(false)}
                 className={`rounded-xl px-4 py-3 font-sans font-medium text-[11px] uppercase tracking-widest transition-colors hover:bg-white/5 ${
                   "indent" in item && item.indent
-                    ? "ml-4 text-white/40 hover:text-white/70"
-                    : "text-white/80 hover:text-white"
+                    ? "ml-4 text-white/70 hover:text-white"
+                    : "text-white hover:text-amber-300"
                 }`}
               >
                 {item.label}

@@ -11,7 +11,7 @@ export default function SectorsTicker() {
             <span className="font-sans font-medium text-[11px] uppercase tracking-widest text-amber-600 px-6">
               {sector.title}
             </span>
-            <span className="text-white/20 text-xs">•</span>
+            <span className="text-white/85 text-xs">•</span>
           </span>
         ))}
       </div>

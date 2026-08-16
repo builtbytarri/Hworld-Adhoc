@@ -90,7 +90,7 @@ export default function SubpageHero({
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: EASE }}
-            className="mt-5 max-w-lg text-[16px] font-light leading-relaxed text-white/55"
+            className="mt-5 max-w-lg text-[16px] font-light leading-relaxed text-white/82"
           >
             {subline}
           </motion.p>

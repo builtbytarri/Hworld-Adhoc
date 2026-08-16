@@ -236,7 +236,7 @@ export function CardStack<T extends CardStackItem>({
           {activeItem.href && (
             <Link
               href={activeItem.href}
-              className="text-[#0E0E0E]/35 transition-colors hover:text-amber-600"
+              className="text-[#0E0E0E]/80 transition-colors hover:text-amber-600"
               aria-label="Open service page"
             >
               <SquareArrowOutUpRight className="h-4 w-4" />
@@ -263,7 +263,7 @@ function DefaultFanCard({ item, active }: { item: CardStackItem; active: boolean
             loading="eager"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-[#F8F7F5] text-sm text-[#0E0E0E]/40">
+          <div className="flex h-full w-full items-center justify-center bg-[#F8F7F5] text-sm text-[#0E0E0E]/80">
             No image
           </div>
         )}

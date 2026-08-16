@@ -133,21 +133,21 @@ export default function AboutPage() {
             <div className="pr-0 lg:pr-14">
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 border-t border-[#E5E2DC] pt-6">
                 <AnimatedSection delay={0.05}>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/35">
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/80">
                     Who We Are
                   </h3>
-                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-body">
                     H-World exists because the market needed something that didn&apos;t exist:
                     expert-grade planning, controls and forensic professionals available
                     on demand, without the wait of a permanent hire or the compromise
                     of a generalist agency.
                   </p>
-                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-body">
                     A programme drifting. A claim needing analysis. A controls function
                     that needs standing up from scratch. These are the moments we are
                     built for.
                   </p>
-                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-body">
                     We are the ad hoc division of{" "}
                     <a
                       href={site.parent.url}
@@ -163,16 +163,16 @@ export default function AboutPage() {
                 </AnimatedSection>
 
                 <AnimatedSection delay={0.12}>
-                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/35">
+                  <h3 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#0E0E0E]/80">
                     How We Work
                   </h3>
-                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                  <p className="text-[length:var(--v-text-sm)] font-light leading-[1.6] text-body">
                     We embed into your team. We align to your governance, your tools
                     and your reporting cadence from day one, not as consultants who
                     parachute in and leave, but as professionals who carry the work
                     alongside you.
                   </p>
-                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-[#0E0E0E]/60">
+                  <p className="mt-2 text-[length:var(--v-text-sm)] font-light leading-[1.6] text-body">
                     The goal is always to deliver value immediately, and to leave your
                     team stronger than we found it.
                   </p>
@@ -181,14 +181,18 @@ export default function AboutPage() {
 
               {/* Stats */}
               <AnimatedSection delay={0.2} className="mt-5 md:mt-[var(--v-block-sm)] border-t border-[#E5E2DC] pt-4">
-                <p className="text-[13px] font-light tracking-wide text-[#0E0E0E]/40">
-                  <span className="font-semibold text-[#0E0E0E]/70">10+</span> disciplines
-                  &nbsp;&nbsp;·&nbsp;&nbsp;
-                  <span className="font-semibold text-[#0E0E0E]/70">8</span> sectors
-                  &nbsp;&nbsp;·&nbsp;&nbsp;
-                  <span className="font-semibold text-[#0E0E0E]/70">48h</span> from brief to deployment
-                  &nbsp;&nbsp;·&nbsp;&nbsp;
-                  <span className="font-semibold text-[#0E0E0E]/70">100%</span> independent
+                {/* Figures inherit the paragraph colour and are set apart by
+                    weight alone, so the line reads as one sentence rather than
+                    numbers floating away from their labels. Explicit {" "}
+                    because JSX swallows the space after a closing tag. */}
+                <p className="text-[13px] font-light tracking-wide text-body">
+                  <span className="font-semibold">10+</span>{" "}disciplines
+                  <span aria-hidden className="mx-2.5 text-[#0E0E0E]/35">·</span>
+                  <span className="font-semibold">8</span>{" "}sectors
+                  <span aria-hidden className="mx-2.5 text-[#0E0E0E]/35">·</span>
+                  <span className="font-semibold">48h</span>{" "}from brief to deployment
+                  <span aria-hidden className="mx-2.5 text-[#0E0E0E]/35">·</span>
+                  <span className="font-semibold">100%</span>{" "}independent
                 </p>
               </AnimatedSection>
             </div>
@@ -243,7 +247,7 @@ export default function AboutPage() {
       <section className="bg-[#F8F7F5] py-7 lg:py-8">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <AnimatedSection className="mb-4">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/35">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#0E0E0E]/80">
               What We Do In Practice
             </p>
           </AnimatedSection>
@@ -318,7 +322,7 @@ export default function AboutPage() {
                 <h3 className="mt-2 text-[16px] font-semibold text-[#0E0E0E]">
                   {p.heading}
                 </h3>
-                <p className="mt-1.5 text-[13px] font-light leading-relaxed text-[#0E0E0E]/55">
+                <p className="mt-1.5 text-[13px] font-light leading-relaxed text-body">
                   {p.body}
                 </p>
               </AnimatedSection>

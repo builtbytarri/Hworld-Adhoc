@@ -127,7 +127,7 @@ export default function ServicesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
-            className="mt-3 text-[14.5px] font-light leading-relaxed text-[#0E0E0E]/50"
+            className="mt-3 text-[14.5px] font-light leading-relaxed text-body"
           >
             From mobilisation through to completion, and into forensic analysis, our
             specialists plug straight into live programmes wherever the gap is.

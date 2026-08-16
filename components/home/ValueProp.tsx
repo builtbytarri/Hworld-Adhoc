@@ -74,7 +74,7 @@ export default function ValueProp() {
           <h2 className="text-[clamp(1.9rem,3.5vw,3rem)] font-medium leading-[1.05] tracking-[-0.02em] text-[#0E0E0E]">
             We put a specialist on your programme the moment you need one.
           </h2>
-          <p className="mt-3 text-[15px] font-light leading-relaxed text-[#0E0E0E]/55">
+          <p className="mt-3 text-[15px] font-light leading-relaxed text-body">
             H-World&apos;s Ad Hoc division exists for the moment you need an expert and can&apos;t
             wait to hire one. We put a trusted specialist on your programme within days, do the
             work to the standard a major project demands, and hand it back cleanly once it&apos;s done.
@@ -126,7 +126,7 @@ export default function ValueProp() {
                   {panel.title}
                 </h3>
                 {/* Description slides up on hover (Emil: specific transform) */}
-                <p className="mt-2 max-h-0 overflow-hidden text-sm font-light leading-relaxed text-white/65 transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:max-h-24 group-hover:opacity-100 opacity-0">
+                <p className="mt-2 max-h-0 overflow-hidden text-sm font-light leading-relaxed text-white/88 transition-[max-height,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:max-h-24 group-hover:opacity-100 opacity-0">
                   {panel.body}
                 </p>
               </div>

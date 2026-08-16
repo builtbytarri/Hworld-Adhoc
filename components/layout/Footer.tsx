@@ -59,7 +59,7 @@ export default function Footer() {
                 className="h-24 w-auto lg:h-28"
               />
             </Link>
-            <p className="mt-2 max-w-[240px] text-sm font-light leading-relaxed text-[#0E0E0E]/50">
+            <p className="mt-2 max-w-[240px] text-sm font-normal leading-relaxed text-[#0E0E0E]/75">
               Expert project management, planning and forensics support, deployed when you need it most.
             </p>
             <a
@@ -72,7 +72,7 @@ export default function Footer() {
 
           {/* Management */}
           <div>
-            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E0E0E]/70">
               Ad Hoc Management
             </h4>
             <ul className="space-y-1.5">
@@ -80,7 +80,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-[13px] font-light text-[#0E0E0E]/60 transition-colors hover:text-[#0E0E0E]"
+                    className="text-[13px] font-light text-[#0E0E0E] transition-colors hover:text-amber-700"
                   >
                     {s.title}
                   </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
 
           {/* Forensics — own column */}
           <div>
-            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E0E0E]/70">
               Ad Hoc Forensics
             </h4>
             <ul className="space-y-1.5">
@@ -99,7 +99,7 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/forensics/${s.slug}`}
-                    className="text-[13px] font-light text-[#0E0E0E]/60 transition-colors hover:text-[#0E0E0E]"
+                    className="text-[13px] font-light text-[#0E0E0E] transition-colors hover:text-amber-700"
                   >
                     {s.title}
                   </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E0E0E]/70">
               Company
             </h4>
             <ul className="space-y-1.5">
@@ -122,7 +122,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[13px] font-light text-[#0E0E0E]/60 transition-colors hover:text-[#0E0E0E]"
+                    className="text-[13px] font-light text-[#0E0E0E] transition-colors hover:text-amber-700"
                   >
                     {item.label}
                   </Link>
@@ -135,7 +135,7 @@ export default function Footer() {
                   href="https://www.hworldinc.com"
                   target="_blank"
                   rel="noopener"
-                  className="text-[13px] font-light text-[#0E0E0E]/60 transition-colors hover:text-[#0E0E0E]"
+                  className="text-[13px] font-light text-[#0E0E0E] transition-colors hover:text-amber-700"
                 >
                   H-World Group
                 </a>
@@ -145,10 +145,10 @@ export default function Footer() {
 
           {/* Get in touch */}
           <div>
-            <h4 className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-[#0E0E0E]/35">
+            <h4 className="mb-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E0E0E]/70">
               Deploy Expertise
             </h4>
-            <p className="mb-3 text-[13px] font-light leading-relaxed text-[#0E0E0E]/50">
+            <p className="mb-3 text-[13px] font-normal leading-relaxed text-[#0E0E0E]/75">
               Need rapid resource deployment or forensic support?
             </p>
             <Link
@@ -167,7 +167,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E5E2DC] text-[#0E0E0E]/50 transition-colors duration-150 hover:border-amber-600 hover:bg-amber-600 hover:text-white"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#D8D4CC] text-[#0E0E0E]/75 transition-colors duration-150 hover:border-amber-600 hover:bg-amber-600 hover:text-white"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="h-[15px] w-[15px]" aria-hidden>
                     <path d={s.path} />
@@ -186,7 +186,7 @@ export default function Footer() {
             payment processors, KYC checks) associate the trading brand
             "H-World" with the legal entity "Project World Ltd". */}
         <div className="mt-4 border-t border-[#EBEBEB] pt-3">
-          <p className="text-[11px] font-light leading-relaxed text-[#0E0E0E]/35">
+          <p className="text-[11px] font-light leading-relaxed text-[#0E0E0E]/80">
             H-World and H-World Ad Hoc are trading names of Project World Ltd,
             a company registered in England and Wales. Company number 15385102.
             Registered office: 37 Harewood Gardens, Bournemouth, England, BH7 7RH.
@@ -195,12 +195,12 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-3 flex flex-col items-start justify-between gap-2 border-t border-[#EBEBEB] pt-3 sm:flex-row sm:items-center">
-          <p className="text-[11px] font-light text-[#0E0E0E]/30">
+          <p className="text-[11px] font-light text-[#0E0E0E]/80">
             &copy; {year} Project World Ltd, trading as H-World.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Use"].map((item) => (
-              <span key={item} className="text-[11px] font-light text-[#0E0E0E]/30">
+              <span key={item} className="text-[11px] font-light text-[#0E0E0E]/80">
                 {item}
               </span>
             ))}
