@@ -109,10 +109,15 @@
   --v-block-sm:  calc(0.25rem + var(--vt) * 2rem);     /*  4 → 36  gap after hairline divider*/
   --v-stack:     calc(0.375rem+ var(--vt) * 0.5rem);   /*  6 → 14  sidebar / small stacks    */
 
-  /* Navbar logo — compact on short viewports so the fixed nav stays clear of
-   * the full-bleed hero content; grows on tall screens where heroes are tall
-   * and there's room to spare. Bumped up (client: logo read as too small/timid). */
-  --v-logo:      calc(56px    + var(--vt) * 20px);     /* 56 → 76  navbar logo height          */
+  /* Navbar logo — the PNG itself has very little internal margin, so it should
+   * fill nearly the full height of the bar rather than sit small inside it.
+   * Raised again (client: still reads too small; fill the available space). */
+  --v-logo:      calc(72px    + var(--vt) * 24px);     /* 72 → 96  navbar logo height          */
+
+  /* Total navbar height = logo + 4px padding top and bottom (Nav uses py-1).
+   * Heroes derive their top padding from this so content always clears the
+   * fixed nav. Change --v-logo and every clearance follows automatically. */
+  --v-nav:       calc(var(--v-logo) + 8px);            /* 80 → 104  fixed navbar height        */
 
   /* Hero */
   --v-hero:      calc(150px   + var(--vt) * 130px);    /* 150 → 280  standard subpage hero    */

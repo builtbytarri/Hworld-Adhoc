@@ -29,7 +29,8 @@ export default function ServicesContent() {
     <>
       <div className="flex min-h-[100dvh] flex-col">
         <SubpageHero
-          eyebrow="Ad Hoc Management Services"
+          /* eyebrow="Ad Hoc Management Services" — commented out; the heading
+             carries the page and this clears the fixed nav. */
           headingWhite="Expert support across"
           headingAmber="every phase of delivery."
           subline="Take one discipline or several, embedded in your team for a busy period, an urgent review, or a full delivery programme, and working within days."

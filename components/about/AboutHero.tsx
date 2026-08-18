@@ -34,7 +34,9 @@ export default function AboutHero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/55 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/20" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(60px,calc(var(--v-hero)*0.4))]">
+      {/* Top padding derives from --v-nav so the eyebrow always clears the
+          fixed navbar with breathing room, at any viewport height. */}
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-[calc(var(--v-nav)+6px)] lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(calc(var(--v-nav)+7px),calc(var(--v-hero)*0.4))]">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}

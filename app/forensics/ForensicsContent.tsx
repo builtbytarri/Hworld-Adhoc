@@ -165,7 +165,8 @@ export default function ForensicsContent() {
     <>
       <div className="flex min-h-[100dvh] flex-col">
         <SubpageHero
-          eyebrow="Ad Hoc Forensics"
+          /* eyebrow="Ad Hoc Forensics" — commented out; the heading carries the
+             page and this clears the fixed nav. */
           headingWhite="Forensic analysis that holds up"
           headingAmber="when it reaches a dispute."
           imageSrc={img.networkPins.src}

@@ -57,19 +57,30 @@ export default function Nav() {
             : "border-b border-white/10 bg-transparent"
         }`}
       >
-        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-2 lg:px-10">
+        {/* Minimal vertical padding — the logo should fill nearly the whole bar. */}
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-1 lg:px-10">
           {/* Logo — H-World Ad Hoc combined mark (height scales with viewport)
               Swaps to the dark-text variant once the nav turns white on scroll,
-              so "Project Planning & Controls" stays legible either way. */}
+              so "Project Planning & Controls" stays legible either way.
+
+              CROP NOTE: the source PNGs are square canvases where the visible
+              mark only fills ~57% of the height (large built-in transparent
+              padding top/bottom). Sizing the <img> box alone scales that
+              padding along with the mark, so the logo still reads as tiny no
+              matter how big the box gets. The fix: render the image ~1.6x
+              taller than the visible box and clip the overflow, so the crop
+              itself does the work the container size can't. */}
           <Link href="/" className="group flex items-center">
-            <Image
-              src={scrolled ? "/logob.png" : "/logo2.png"}
-              alt="H-World Ad Hoc, Project Planning & Controls"
-              width={1080}
-              height={1080}
-              priority
-              className="h-[var(--v-logo)] w-auto"
-            />
+            <div className="h-[var(--v-logo)] flex items-center overflow-y-hidden">
+              <Image
+                src={scrolled ? "/logoblack2.png" : "/logowhite2.png"}
+                alt="H-World Ad Hoc, Project Planning & Controls"
+                width={2326}
+                height={2204}
+                priority
+                className="h-[calc(var(--v-logo)*1.6)] w-auto max-w-none"
+              />
+            </div>
           </Link>
 
           {/* Desktop nav */}
@@ -198,7 +209,9 @@ export default function Nav() {
         <div className="fixed inset-0 z-[60] flex flex-col bg-charcoal">
           <div className="flex items-center justify-between px-6 py-5">
             <Link href="/" onClick={() => setMobileOpen(false)} className="flex items-center">
-              <Image src="/logo2.png" alt="H-World Ad Hoc, Project Planning & Controls" width={1080} height={1080} className="h-14 w-auto" />
+              <div className="h-14 flex items-center overflow-y-hidden">
+                <Image src="/logowhite2.png" alt="H-World Ad Hoc, Project Planning & Controls" width={2344} height={2178} className="h-[5.6rem] w-auto max-w-none" />
+              </div>
             </Link>
             <button
               className="flex h-10 w-10 items-center justify-center rounded-xl text-white/80 hover:text-white"

@@ -88,8 +88,11 @@ export const site = {
     "https://www.facebook.com/hworldinc",
   ],
 
-  /* Default social share image. */
-  ogImage: "/logo2.png",
+  /* Default social share image and the schema.org Organization logo.
+   * Deliberately the BLACK-wordmark variant: search results, knowledge panels
+   * and social cards render on white, where the white-wordmark logo would be
+   * invisible. The white variant is for the site's own dark surfaces only. */
+  ogImage: "/logoblack2.png",
 } as const;
 
 /** Absolute URL for a site-relative path. */

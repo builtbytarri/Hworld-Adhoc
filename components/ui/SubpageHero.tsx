@@ -15,7 +15,9 @@ import KenBurnsImage from "./KenBurnsImage";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 interface SubpageHeroProps {
-  eyebrow: string;
+  /* Optional — omit to drop the eyebrow entirely and give the heading more
+     clearance beneath the fixed nav. */
+  eyebrow?: string;
   headingWhite: string;
   headingAmber?: string;
   subline?: string;
@@ -54,15 +56,17 @@ export default function SubpageHero({
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className={`relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 lg:px-10 ${compact ? "pb-[var(--v-hero-pad)] pt-[max(80px,calc(var(--v-hero-slim)*0.45))]" : "pb-12 pt-32"}`}>
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
-          className={`text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500 ${compact ? "mb-2.5" : "mb-4"}`}
-        >
-          {eyebrow}
-        </motion.p>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 lg:px-10 ${compact ? "pb-[var(--v-hero-pad)] pt-[max(calc(var(--v-nav)+7px),calc(var(--v-hero-slim)*0.45))]" : "pb-12 pt-[calc(var(--v-nav)+10px)]"}`}>
+        {eyebrow && (
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
+            className={`text-[11px] font-medium uppercase tracking-[0.22em] text-amber-500 ${compact ? "mb-2.5" : "mb-4"}`}
+          >
+            {eyebrow}
+          </motion.p>
+        )}
 
         <h1 className={`font-bold tracking-[-0.03em] ${compact ? "text-[clamp(2rem,3.4vw,2.85rem)] leading-[1.05]" : "text-[clamp(2.25rem,4.5vw,4rem)] leading-[1.0]"}`}>
           <motion.span

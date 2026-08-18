@@ -50,14 +50,19 @@ export default function Footer() {
 
           {/* Brand — takes 2 cols on large */}
           <div className="col-span-2 lg:col-span-2">
+            {/* Same crop-compensation as the nav logo: the source PNG has
+                large built-in transparent padding, so the visible box is
+                clipped from an oversized render rather than just resized. */}
             <Link href="/" className="mb-2 inline-block">
-              <Image
-                src="/logob.png"
-                alt="H-World Ad Hoc, Project Planning & Controls"
-                width={1080}
-                height={1080}
-                className="h-24 w-auto lg:h-28"
-              />
+              <div className="h-32 lg:h-40 flex items-center overflow-y-hidden">
+                <Image
+                  src="/logoblack2.png"
+                  alt="H-World Ad Hoc, Project Planning & Controls"
+                  width={2326}
+                  height={2204}
+                  className="h-[12.8rem] lg:h-[16rem] w-auto max-w-none"
+                />
+              </div>
             </Link>
             <p className="mt-2 max-w-[240px] text-sm font-normal leading-relaxed text-[#0E0E0E]/75">
               Expert project management, planning and forensics support, deployed when you need it most.

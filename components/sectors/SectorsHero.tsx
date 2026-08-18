@@ -31,7 +31,9 @@ export default function SectorsHero() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-[#0E0E0E]/90 via-[#0E0E0E]/60 to-transparent" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0E0E0E]/70 via-transparent to-[#0E0E0E]/25" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-20 lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(46px,calc(var(--v-hero-slim)*0.4+1.5px))]">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col justify-end px-6 pb-6 pt-[calc(var(--v-nav)+3px)] lg:px-10 lg:pb-[var(--v-hero-pad)] lg:pt-[max(calc(var(--v-nav)+3.5px),calc(var(--v-hero-slim)*0.4))]">
+        {/* Eyebrow commented out — the heading alone carries the page, and this
+            frees clearance beneath the fixed nav. Restore if needed.
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,6 +42,7 @@ export default function SectorsHero() {
         >
           Sectors We Serve
         </motion.p>
+        */}
 
         <h1 className="text-[clamp(1.75rem,3.5vw,3rem)] font-bold leading-[1.05] tracking-[-0.03em]">
           <motion.span
