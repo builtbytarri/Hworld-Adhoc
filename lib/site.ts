@@ -69,7 +69,7 @@ export const site = {
   /* NAP — must match the parent site, Google Business Profile and every
    * directory listing character-for-character. */
   contact: {
-    email: "adhoc@hworldinc.com",
+    email: "info@adhoc.hworldinc.com",
     telephone: "+44 1256 232342",
     address: {
       locality: "Basingstoke",

@@ -46,33 +46,35 @@ export default function Footer() {
   return (
     <footer className="bg-[#F7F6F4] border-t border-[#EBEBEB]">
       <div className="mx-auto max-w-[1280px] px-6 py-5 lg:px-10">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
+        {/* Tighter row gap than column gap — the copy row sits close under the
+            link columns so the whole footer stays compact enough to be seen
+            in one viewport alongside the CTA above it. */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-3 md:grid-cols-4 lg:grid-cols-6">
 
-          {/* Brand — takes 2 cols on large */}
+          {/* Brand — logo only; the copy sits centred beneath the link columns */}
           <div className="col-span-2 lg:col-span-2">
-            {/* Same crop-compensation as the nav logo: the source PNG has
-                large built-in transparent padding, so the visible box is
-                clipped from an oversized render rather than just resized. */}
-            <Link href="/" className="mb-2 inline-block">
-              <div className="h-32 lg:h-40 flex items-center overflow-y-hidden">
+            {/* Crop-compensation. The source PNG is a 3264x3264 canvas whose
+                visible mark occupies only the middle 80.4% horizontally and
+                57.6% vertically, sitting 2.88% above centre. Rendering it
+                oversized and clipping lets the mark fill the box instead of
+                scaling its own transparent margin.
+                  -ml  = 10.5% of the render height, pulling the mark flush
+                         left with the footer's left content edge.
+                  translate-y = 2.88%, optically centring the mark in the crop
+                         (transform, so it does not disturb flex centring). */}
+            {/* `block` not `inline-block` — an inline-block adds baseline
+                descender space below the image, padding out the grid row. */}
+            <Link href="/" className="block">
+              <div className="h-24 lg:h-32 flex items-center overflow-hidden">
                 <Image
                   src="/logoblack2.png"
-                  alt="H-World Ad Hoc, Project Planning & Controls"
-                  width={2326}
-                  height={2204}
-                  className="h-[12.8rem] lg:h-[16rem] w-auto max-w-none"
+                  alt="H-World Ad Hoc, Project Planning & Control"
+                  width={3264}
+                  height={3264}
+                  className="h-[9.6rem] lg:h-[12.8rem] w-auto max-w-none -ml-[1.01rem] lg:-ml-[1.35rem] translate-y-[0.28rem] lg:translate-y-[0.37rem]"
                 />
               </div>
             </Link>
-            <p className="mt-2 max-w-[240px] text-sm font-normal leading-relaxed text-[#0E0E0E]/75">
-              Expert project management, planning and forensics support, deployed when you need it most.
-            </p>
-            <a
-              href="mailto:adhoc@hworldinc.com"
-              className="mt-2 block text-sm text-amber-700 transition-colors hover:text-amber-600"
-            >
-              adhoc@hworldinc.com
-            </a>
           </div>
 
           {/* Management */}
@@ -179,6 +181,32 @@ export default function Footer() {
                   </svg>
                 </a>
               ))}
+            </div>
+          </div>
+
+          {/* Brand copy — its own full-width row, centred across the whole
+              footer so it reads as a deliberate closing statement. Capped
+              width keeps the lines breaking evenly instead of stretching. */}
+          <div className="col-span-full">
+            <div className="mx-auto max-w-[560px] text-center">
+              <p className="text-[13.5px] font-normal leading-[1.65] text-[#0E0E0E]/75">
+                Experts in project planning &amp; control and forensic support,
+                delivering practical, tailored solutions from hours to years,
+                depending on your project&rsquo;s needs.
+              </p>
+
+              {/* Brand promise — set apart by weight and colour so it reads as
+                  a statement rather than a continuation of the paragraph. */}
+              <p className="mt-2.5 text-[13.5px] font-semibold leading-snug text-[#0E0E0E]">
+                Expertise when you need it. Solutions when it matters.
+              </p>
+
+              <a
+                href="mailto:info@adhoc.hworldinc.com"
+                className="mt-2.5 inline-block text-sm font-medium text-amber-700 transition-colors hover:text-amber-600"
+              >
+                info@adhoc.hworldinc.com
+              </a>
             </div>
           </div>
         </div>

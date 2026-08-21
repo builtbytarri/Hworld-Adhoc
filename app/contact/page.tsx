@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   /* `absolute` — brand already present, don't let the template duplicate it. */
   title: { absolute: "Contact H-World Ad Hoc | Basingstoke, UK" },
   description:
-    "Contact H-World Ad Hoc in Basingstoke, Hampshire. Email adhoc@hworldinc.com or call +44 1256 232342. We respond within 24 hours.",
+    "Contact H-World Ad Hoc in Basingstoke, Hampshire. Email info@adhoc.hworldinc.com or call +44 1256 232342. We respond within 24 hours.",
   alternates: { canonical: "/contact" },
   openGraph: {
     title: "Contact H-World Ad Hoc | Basingstoke, UK",

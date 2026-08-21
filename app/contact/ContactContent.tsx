@@ -120,8 +120,8 @@ export default function ContactContent() {
                   </div>
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#0E0E0E]/80">Email</p>
-                    <a href="mailto:adhoc@hworldinc.com" className="mt-1 block text-[15px] font-medium text-[#0E0E0E] transition-colors hover:text-amber-600">
-                      adhoc@hworldinc.com
+                    <a href="mailto:info@adhoc.hworldinc.com" className="mt-1 block text-[15px] font-medium text-[#0E0E0E] transition-colors hover:text-amber-600">
+                      info@adhoc.hworldinc.com
                     </a>
                   </div>
                 </AnimatedSection>

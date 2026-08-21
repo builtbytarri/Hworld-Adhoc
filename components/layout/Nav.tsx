@@ -71,14 +71,14 @@ export default function Nav() {
               taller than the visible box and clip the overflow, so the crop
               itself does the work the container size can't. */}
           <Link href="/" className="group flex items-center">
-            <div className="h-[var(--v-logo)] flex items-center overflow-y-hidden">
+            <div className="h-[var(--v-logo)] flex items-center overflow-hidden">
               <Image
                 src={scrolled ? "/logoblack2.png" : "/logowhite2.png"}
-                alt="H-World Ad Hoc, Project Planning & Controls"
-                width={2326}
-                height={2204}
+                alt="H-World Ad Hoc, Project Planning & Control"
+                width={3264}
+                height={3264}
                 priority
-                className="h-[calc(var(--v-logo)*1.6)] w-auto max-w-none"
+                className="h-[calc(var(--v-logo)*1.6)] w-auto max-w-none translate-y-[calc(var(--v-logo)*1.6*0.0288)]"
               />
             </div>
           </Link>

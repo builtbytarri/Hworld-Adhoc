@@ -117,7 +117,7 @@ I audited the codebase. This is the current state:
 | `/services` | `Ad Hoc Management Services \| H-World Ad Hoc` | Programme management, planning, controls and 4D planning from H-World Ad Hoc. Specialists deployed to your project within days, for as long as you need. |
 | `/forensics` | `Construction Forensics & Claims \| H-World Ad Hoc` | Forensic delay analysis, EOT claims, dispute resolution and expert witness services from H-World Ad Hoc. Evidence that holds up in adjudication. |
 | `/about` | `About H-World Ad Hoc \| Part of H-World Inc` | H-World Ad Hoc is the on-demand planning and forensics division of H-World Inc, alongside engineering & construction, marine and deal sourcing. |
-| `/contact` | `Contact H-World Ad Hoc \| Basingstoke, UK` | Contact H-World Ad Hoc in Basingstoke, Hampshire. Email adhoc@hworldinc.com or call +44 1256 232342. We respond within 24 hours. |
+| `/contact` | `Contact H-World Ad Hoc \| Basingstoke, UK` | Contact H-World Ad Hoc in Basingstoke, Hampshire. Email info@adhoc.hworldinc.com or call +44 1256 232342. We respond within 24 hours. |
 | `/sectors` | `Sectors We Serve \| H-World Ad Hoc` | Rail, energy, marine, oil & gas, infrastructure and commercial construction. H-World Ad Hoc specialists with genuine sector experience. |
 | Service pages | `{Service} \| H-World Ad Hoc` | Existing `shortDesc` (already rewritten and strong) |
 
